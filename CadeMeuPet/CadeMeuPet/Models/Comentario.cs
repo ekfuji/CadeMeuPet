@@ -33,5 +33,10 @@ namespace CadeMeuPet.Models
         [MaxLength(100, ErrorMessage ="O email deve ter no máximo 100 caracteres!")]
         [Display(Name = "Email")]
         public string EmailComentario { get; set; }
+
+        [Display(Name = "Animal")]
+        public int AnimalId { get; set; }
+
+        public virtual Animal Animal { get; set; }
     }
 }

@@ -32,7 +32,7 @@ namespace CadeMeuPet.Models
         public string VistoPelaUltimaVez { get; set; }
 
         [Column(TypeName = "BINARY")]
-        public byte Situacao { get; set; } 
+        public bool Situacao { get; set; } 
 
         [Required(ErrorMessage = "o Porte é obrigatório")]
         [Display(Name = "Tamnho")]
@@ -40,15 +40,15 @@ namespace CadeMeuPet.Models
 
         public virtual Porte Porte { get; set; }
 
-        [Display(Name = "Comentário")]
-        public int ComentarioId { get; set; }
-
-        public virtual Comentario Comentario { get; set; }
-
         [Required(ErrorMessage = "o Tipo é obrigatório")]
         [Display(Name = "Tipo")]
         public int TipoId { get; set; }
 
         public virtual Tipo Tipo { get; set; }
+
+        [Display(Name ="Usuário")]
+        public int UsuarioId { get; set; }
+
+        public virtual Usuario Usuario { get; set; }
     }
 }
