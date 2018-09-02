@@ -140,8 +140,10 @@
     <Compile Include="Models\Animal.cs" />
     <Compile Include="Models\Comentario.cs" />
     <Compile Include="Models\Context.cs" />
+    <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Porte.cs" />
     <Compile Include="Models\Tipo.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
