@@ -157,12 +157,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TipoController.cs" />
     <Compile Include="DAL\Singleton\Singleton.cs" />
     <Compile Include="DAL\TipoDAO.cs" />
+    <Compile Include="DAL\UsuarioDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

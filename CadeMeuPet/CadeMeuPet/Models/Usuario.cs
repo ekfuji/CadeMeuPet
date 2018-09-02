@@ -49,6 +49,8 @@ namespace CadeMeuPet.Models
         [Display(Name = "Endereço")]
         public int EnderecoId { get; set; }
 
+        public string UsuarioGuid { get; set; }
+
         public virtual Endereco Endereco { get; set; }
 
 
