@@ -27,6 +27,7 @@ namespace CadeMeuPet.Models
         [Column(TypeName = "VARCHAR")]
         [Required(ErrorMessage = "o campo Senha é obrigatório")]
         [MaxLength(60, ErrorMessage = "A senha deve ter no máximo 60 caracteres")]
+        [DataType(DataType.Password)]
         [Display(Name = "Senha")]
         public string Password { get; set; }
 
