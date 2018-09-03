@@ -147,6 +147,7 @@
     <Content Include="Content\estilo.css" />
     <Content Include="Content\img\background.png" />
     <Content Include="Content\img\CADEMEUPET.png" />
+    <Content Include="Content\img\conta.png" />
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
