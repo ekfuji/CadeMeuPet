@@ -49,15 +49,28 @@ namespace CadeMeuPet.Controllers
         }
         #endregion
 
+        #region Pag Alterar Tipo
+        public ActionResult AlterarTipo(int id)
+        {
+            return View(TipoDAO.BuscarById(id));
+        }
+        #endregion
+
+
         #region Alterar Tipo
+        [HttpPost]
         public ActionResult AlterarTipo(Tipo tipo)
         {
+           Tipo tipoOriginal = TipoDAO.BuscarById(tipo.TipoId);
+                tipoOriginal.Especie = tipo.Especie;
+            
+
             if (ModelState.IsValid)
             {
-                TipoDAO.AlterarTipo(tipo);
-                return RedirectToAction("AlterarTipo", "Tipo");
+                TipoDAO.AlterarTipo(tipoOriginal);
+                return RedirectToAction("Index", "Tipo");
             }
-            return RedirectToAction("Index", "Tipo");
+            return RedirectToAction("AlterarTipo", "Tipo");
         }
         #endregion
 

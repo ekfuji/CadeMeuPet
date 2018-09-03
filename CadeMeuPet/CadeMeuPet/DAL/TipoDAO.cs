@@ -18,7 +18,7 @@ namespace CadeMeuPet.DAL
         {
             try
             {
-                if (tipo != null)
+                if (BuscarByName(tipo) == null)
                 {
                     ctx.Tipos.Add(tipo);
                     ctx.SaveChanges();
@@ -60,14 +60,14 @@ namespace CadeMeuPet.DAL
         #region Alterar Tipo
         public static bool AlterarTipo(Tipo tipo)
         {
-            Tipo tipoAntigo = BuscarById(tipo.TipoId);
-            if(tipoAntigo != null)
+
+            if (ctx.Tipos.FirstOrDefault(x => x.Especie.Equals(tipo.Especie) && x.TipoId != tipo.TipoId) == null)
             {
                 ctx.Entry(tipo).State = EntityState.Modified;
                 ctx.SaveChanges();
                 return true;
             }
-            
+
             return false;
         }
         #endregion
