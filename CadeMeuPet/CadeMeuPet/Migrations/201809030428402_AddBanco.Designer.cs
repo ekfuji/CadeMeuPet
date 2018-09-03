@@ -7,13 +7,13 @@ namespace CadeMeuPet.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class CreateTable : IMigrationMetadata
+    public sealed partial class AddBanco : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddBanco));
         
         string IMigrationMetadata.Id
         {
-            get { return "201809030142548_CreateTable"; }
+            get { return "201809030428402_AddBanco"; }
         }
         
         string IMigrationMetadata.Source

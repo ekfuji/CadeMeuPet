@@ -1,0 +1,77 @@
+﻿@using CadeMeuPet.Models
+@model Endereco
+@{
+    ViewBag.Title = "CadastrarEndereco";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="col-sm-4">
+    @using (Html.BeginForm("CadastrarEndereco", "Endereco", FormMethod.Post, new { @class = "form-group", enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+        <br/>
+        <fieldset>
+            <div class="jumbotron">
+                <legend>Cadastro de Endereço</legend>
+
+
+                @Html.LabelFor(Model => Model.Logradouro, null, new { @style = "color: #000000" })
+                @Html.ValidationMessageFor(Model => Model.Logradouro, null, new { @class = "text-danger" })<br />
+                @Html.TextBoxFor(Model => Model.Logradouro,
+                new
+                {
+                    @class = "form-control",
+                    @placeholder = "Rua, Av ..."
+
+                })<br />
+
+
+                @Html.LabelFor(Model => Model.Numero, null, new { @style = "color: #000000" })
+                @Html.ValidationMessageFor(Model => Model.Numero, null, new { @class = "text-danger" })<br />
+                @Html.TextBoxFor(Model => Model.Numero,
+                new
+                {
+                    @class = "form-control",
+                    @placeholder = "Nº"
+
+                })<br />
+
+                @Html.LabelFor(Model => Model.CEP, null, new { @style = "color: #000000" })
+                @Html.ValidationMessageFor(Model => Model.CEP, null, new { @class = "text-danger" })<br />
+                @Html.TextBoxFor(Model => Model.CEP,
+                new
+                {
+                    @class = "form-control",
+                    @placeholder = "00000-000"
+
+                })<br />
+                
+                @Html.LabelFor(Model => Model.Latitude, null, new { @style = "color: #000000" })
+                @Html.ValidationMessageFor(Model => Model.Latitude, null, new { @class = "text-danger" })<br />
+                @Html.TextBoxFor(Model => Model.Latitude,
+                    new
+                    {
+                        @class = "form-control",
+                        @placeholder = "Latitude"
+
+                    })<br />
+                
+                @Html.LabelFor(Model => Model.Longitude, null, new { @style = "color: #000000" })
+                @Html.ValidationMessageFor(Model => Model.Longitude, null, new { @class = "text-danger" })<br />
+                @Html.TextBoxFor(Model => Model.Longitude,
+                    new
+                    {
+                        @class = "form-control",
+                        @placeholder = "Latitude"
+
+                    })<br />
+
+                <input type="submit" value="Cadastrar" class="btn btn-success" />
+
+            </div>
+</fieldset>
+        
+    }
+</div>
+

@@ -160,19 +160,21 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AnimalController.cs" />
+    <Compile Include="Controllers\EnderecoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TipoController.cs" />
     <Compile Include="DAL\AnimalDAO.cs" />
     <Compile Include="DAL\ComentarioDAO.cs" />
+    <Compile Include="DAL\EnderecoDAO.cs" />
     <Compile Include="DAL\Singleton\Singleton.cs" />
     <Compile Include="DAL\TipoDAO.cs" />
     <Compile Include="DAL\UsuarioDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201809030142548_CreateTable.cs" />
-    <Compile Include="Migrations\201809030142548_CreateTable.Designer.cs">
-      <DependentUpon>201809030142548_CreateTable.cs</DependentUpon>
+    <Compile Include="Migrations\201809030428402_AddBanco.cs" />
+    <Compile Include="Migrations\201809030428402_AddBanco.Designer.cs">
+      <DependentUpon>201809030428402_AddBanco.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Animal.cs" />
@@ -199,6 +201,9 @@
     <Content Include="Views\Tipo\Index.cshtml" />
     <Content Include="Views\Tipo\CadastrarTipo.cshtml" />
     <Content Include="Views\Tipo\AlterarTipo.cshtml" />
+    <Content Include="Views\Endereco\Index.cshtml" />
+    <Content Include="Views\Endereco\CadastrarEndereco.cshtml" />
+    <Content Include="Views\Endereco\AlterarEndereco.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -214,8 +219,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201809030142548_CreateTable.resx">
-      <DependentUpon>201809030142548_CreateTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201809030428402_AddBanco.resx">
+      <DependentUpon>201809030428402_AddBanco.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
