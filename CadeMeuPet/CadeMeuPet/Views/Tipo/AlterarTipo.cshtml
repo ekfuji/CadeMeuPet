@@ -1,0 +1,31 @@
+﻿@using CadeMeuPet.Models
+@model Tipo
+@{
+    ViewBag.Title = "Alterar Tipo";
+
+}
+
+
+
+<div class="col-sm-4">
+    @using (Html.BeginForm("AlterarTipo", "Tipo", FormMethod.Post, new { @class = "form-group", enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+        <fieldset>
+            <legend>Editar Tipo</legend>
+            @Html.HiddenFor(model => model.TipoId)
+
+            @Html.LabelFor(Model => Model.Especie, null, new { @style = "color: #000000" })
+            @Html.ValidationMessageFor(Model => Model.Especie, null, new { @class = "text-danger" })<br />
+            @Html.TextBoxFor(Model => Model.Especie,
+                    new
+                    {
+                        @class = "form-control",
+                        @placeholder = "Espécie, raça ou tipo do animal"
+
+                    })<br />
+        </fieldset>
+        <input type="submit" value="Alterar" class="btn btn-success" />
+    }
+</div>

@@ -44,7 +44,7 @@ namespace CadeMeuPet.Models
 
         [Required(ErrorMessage = "o campo Permissão é obrigatório")]
         [Display(Name = "Permissão de usuário")]
-        public bool IsAdmin { get; set; }
+        public byte IsAdmin { get; set; }
 
         [Display(Name = "Endereço")]
         public int EnderecoId { get; set; }

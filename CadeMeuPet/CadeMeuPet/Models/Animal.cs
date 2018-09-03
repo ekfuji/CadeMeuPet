@@ -20,6 +20,9 @@ namespace CadeMeuPet.Models
         public string NomeAnimal { get; set; }
 
         [Column(TypeName = "VARCHAR")]
+        public string Imagem { get; set; }
+
+        [Column(TypeName = "VARCHAR")]
         [Required(ErrorMessage = "O campo é obrigatório!")]
         [Display(Name = "Características")]
         [MaxLength(200, ErrorMessage = "O campo deve ter no máximo 200 caracteres")]
@@ -31,8 +34,9 @@ namespace CadeMeuPet.Models
         [MaxLength(200, ErrorMessage = "O campo deve ter no máximo 200 caracteres")]
         public string VistoPelaUltimaVez { get; set; }
 
-        [Column(TypeName = "BINARY")]
-        public bool Situacao { get; set; } 
+       
+        [Display(Name = "Status publicação")]
+        public byte Situacao { get; set; } 
 
         [Required(ErrorMessage = "o Porte é obrigatório")]
         [Display(Name = "Tamnho")]
