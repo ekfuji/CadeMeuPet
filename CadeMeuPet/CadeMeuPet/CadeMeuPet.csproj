@@ -185,7 +185,7 @@
     <Compile Include="Models\Tipo.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Util\Sessao.cs" />
+    <Compile Include="Views\Util\Sessao.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
