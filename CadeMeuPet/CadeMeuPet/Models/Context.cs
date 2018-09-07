@@ -17,6 +17,7 @@ namespace CadeMeuPet.Models
         public DbSet<Porte> Portes { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
+        public DbSet<Denuncia> Denuncias { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

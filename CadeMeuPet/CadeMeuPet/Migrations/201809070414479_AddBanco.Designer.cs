@@ -13,7 +13,7 @@ namespace CadeMeuPet.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201809030428402_AddBanco"; }
+            get { return "201809070414479_AddBanco"; }
         }
         
         string IMigrationMetadata.Source

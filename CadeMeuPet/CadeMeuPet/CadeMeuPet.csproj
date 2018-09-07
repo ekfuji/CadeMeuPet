@@ -173,14 +173,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201809030428402_AddBanco.cs" />
-    <Compile Include="Migrations\201809030428402_AddBanco.Designer.cs">
-      <DependentUpon>201809030428402_AddBanco.cs</DependentUpon>
+    <Compile Include="Migrations\201809070414479_AddBanco.cs" />
+    <Compile Include="Migrations\201809070414479_AddBanco.Designer.cs">
+      <DependentUpon>201809070414479_AddBanco.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Animal.cs" />
     <Compile Include="Models\Comentario.cs" />
     <Compile Include="Models\Context.cs" />
+    <Compile Include="Models\Denuncia.cs" />
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Porte.cs" />
     <Compile Include="Models\Tipo.cs" />
@@ -221,8 +222,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201809030428402_AddBanco.resx">
-      <DependentUpon>201809030428402_AddBanco.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201809070414479_AddBanco.resx">
+      <DependentUpon>201809070414479_AddBanco.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
