@@ -20,5 +20,10 @@ namespace CadeMeuPet.Models
         [MaxLength(45, ErrorMessage = "O motivo deve ter no máximo 45 caracteres")]
         [Display(Name = "Motivo")]
         public string Motivo { get; set; }
+
+        [Display(Name = "Animal")]
+        public int AnimalId { get; set; }
+
+        public virtual Animal Animal { get; set; }
     }
 }

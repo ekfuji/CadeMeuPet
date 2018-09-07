@@ -1,0 +1,36 @@
+﻿@using CadeMeuPet.Models
+@model Denuncia
+@{
+    ViewBag.Title = "CadastrarDenuncia";
+}
+
+
+<div class="col-sm-4">
+    <hr />
+    @using (Html.BeginForm("CadastrarDenuncia", "Denuncia", FormMethod.Post, new { @class = "form-group", enctype = "multipart/form-data" }))
+    {
+
+        <div class="jumbotron">
+
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+            <fieldset>
+                <legend>Denuncia</legend>
+
+
+                @Html.LabelFor(Model => Model.Motivo, null, new { @style = "color: #000000" })
+                @Html.ValidationMessageFor(Model => Model.Motivo, null, new { @class = "text-danger" })<br />
+                @Html.TextBoxFor(Model => Model.Motivo,
+                    new
+                    {
+                        @class = "form-control",
+                        @placeholder = "Descreva o motivo da denúncia"
+
+                    })<br />
+            </fieldset>
+            <input type="submit" value="Cadastrar" class="btn btn-success" />
+        </div>
+    }
+</div>
+
+

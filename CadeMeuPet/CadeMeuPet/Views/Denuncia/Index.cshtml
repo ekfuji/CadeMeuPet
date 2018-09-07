@@ -1,0 +1,30 @@
+﻿@using CadeMeuPet.Models
+@model List<Denuncia>
+@{
+    ViewBag.Title = "Index";
+}
+
+<hr />
+
+<div>
+    <table class="table table-hover">
+        <tr class="table-secondary">
+            <th scope="col">Data da Denúncia</th>
+            <th scope="col">Denuncia</th>
+            <th scope="col">Animal Id</th>
+            <th scope="col">Remover</th>
+        </tr>
+
+        @foreach (Denuncia denuncias in Model)
+        {
+            <tr class="table-primary">
+                <td>@denuncias.DataDenuncia</td>
+                <td>@denuncias.Motivo</td>
+                <td>@denuncias.AnimalId</td>
+                <td>@Html.ActionLink("Remover", "RemoverTipo", "Tipo", new { id = denuncias.DenunciaId}, new { @class = "btn btn-primary" })</td>
+            </tr>
+        }
+
+    </table>
+</div>
+
