@@ -30,6 +30,7 @@ namespace CadeMeuPet.Controllers
         [HttpPost]
         public ActionResult CadastrarDenuncia(Denuncia denuncia)
         {
+            denuncia.DataDenuncia = DateTime.Now;
             if (ModelState.IsValid)
             {
                 DenunciaDAO.CadastrarDenuncia(denuncia);

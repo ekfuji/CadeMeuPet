@@ -16,7 +16,7 @@
             @Html.ValidationSummary(true, null, new { @class = "text-danger" })
             <fieldset>
                 <legend>Denuncia</legend>
-
+                @Html.HiddenFor(model => model.AnimalId)
 
                 @Html.LabelFor(Model => Model.Motivo, null, new { @style = "color: #000000" })
                 @Html.ValidationMessageFor(Model => Model.Motivo, null, new { @class = "text-danger" })<br />
