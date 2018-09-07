@@ -103,12 +103,5 @@ namespace CadeMeuPet.DAL
 
         #endregion
 
-        #region BUSCAR USUARIO POR ENDEREÇO
-
-        public static List<Usuario> BuscarPorEndereco(int? id)
-        {
-            return ctx.Usuarios.Include("Endereco").Where(u => u.EnderecoId == id).ToList();
-        }
-        #endregion
     }
 }

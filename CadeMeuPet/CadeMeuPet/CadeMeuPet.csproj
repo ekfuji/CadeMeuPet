@@ -178,6 +178,10 @@
     <Compile Include="Migrations\201809030428402_AddBanco.Designer.cs">
       <DependentUpon>201809030428402_AddBanco.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809070419471_AlterTable.cs" />
+    <Compile Include="Migrations\201809070419471_AlterTable.Designer.cs">
+      <DependentUpon>201809070419471_AlterTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Animal.cs" />
     <Compile Include="Models\Comentario.cs" />
@@ -226,6 +230,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201809030428402_AddBanco.resx">
       <DependentUpon>201809030428402_AddBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809070419471_AlterTable.resx">
+      <DependentUpon>201809070419471_AlterTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
