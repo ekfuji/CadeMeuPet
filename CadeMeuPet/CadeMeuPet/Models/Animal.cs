@@ -27,14 +27,7 @@ namespace CadeMeuPet.Models
         [Display(Name = "Características")]
         [MaxLength(200, ErrorMessage = "O campo deve ter no máximo 200 caracteres")]
         public string Caracteristicas { get; set; }
-
-        [Column(TypeName = "VARCHAR")]
-        [Required(ErrorMessage = "O campo visto pela ultima vez é obrigatório")]
-        [Display(Name = "Visto pela ultima vez")]
-        [MaxLength(200, ErrorMessage = "O campo deve ter no máximo 200 caracteres")]
-        public string VistoPelaUltimaVez { get; set; }
-
-       
+     
         [Display(Name = "Status publicação")]
         public byte Situacao { get; set; } 
 
