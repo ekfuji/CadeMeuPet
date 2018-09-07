@@ -36,7 +36,7 @@ namespace CadeMeuPet.DAL
         #endregion
 
         #region Buscar Porte
-        public static List<Porte> BuscarPorte()
+        public static List<Porte> BuscarPortes()
         {
             return ctx.Portes.ToList();
         }

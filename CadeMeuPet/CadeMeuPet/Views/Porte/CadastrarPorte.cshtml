@@ -1,0 +1,33 @@
+﻿@using CadeMeuPet.Models
+@model Porte
+@{
+    ViewBag.Title = "Cadastrar Porte";
+}
+
+<div class="col-sm-4">
+    <br />
+    @using (Html.BeginForm("CadastroPorte", "Porte", FormMethod.Post, new { @class = "form-group", enctype = "multipart/form-data" }))
+    {
+
+        <div class="jumbotron">
+
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+            <fieldset>
+                <legend>Cadastro do Porte</legend>
+
+
+                @Html.LabelFor(Model => Model.Tamanho)})
+                @Html.ValidationMessageFor(Model => Model.Tamanho, null, new { @class = "text-danger" })<br />
+                @Html.TextBoxFor(Model => Model.Tamanho,
+                    new
+                    {
+                        @class = "form-control",
+                        @placeholder = "Tamnho"
+
+                    })<br />
+            </fieldset>
+            <input type="submit" value="Cadastrar" class="btn btn-success" />
+        </div>
+    }
+</div>

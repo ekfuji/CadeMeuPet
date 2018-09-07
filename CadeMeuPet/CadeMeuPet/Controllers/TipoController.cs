@@ -56,7 +56,6 @@ namespace CadeMeuPet.Controllers
         }
         #endregion
 
-
         #region Alterar Tipo
         [HttpPost]
         public ActionResult AlterarTipo(Tipo tipo)
@@ -67,10 +66,11 @@ namespace CadeMeuPet.Controllers
 
             if (ModelState.IsValid)
             {
-                TipoDAO.AlterarTipo(tipoOriginal);
-                return RedirectToAction("Index", "Tipo");
+                    TipoDAO.AlterarTipo(tipoOriginal);
+                    return RedirectToAction("Index", "Tipo");
+                
             }
-            return RedirectToAction("AlterarTipo", "Tipo");
+            return View(tipo);
         }
         #endregion
 

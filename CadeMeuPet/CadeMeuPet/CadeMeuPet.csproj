@@ -162,6 +162,7 @@
     <Compile Include="Controllers\AnimalController.cs" />
     <Compile Include="Controllers\EnderecoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PorteController.cs" />
     <Compile Include="Controllers\TipoController.cs" />
     <Compile Include="DAL\AnimalDAO.cs" />
     <Compile Include="DAL\ComentarioDAO.cs" />
@@ -206,6 +207,8 @@
     <Content Include="Views\Endereco\CadastrarEndereco.cshtml" />
     <Content Include="Views\Endereco\AlterarEndereco.cshtml" />
     <Content Include="Views\Porte\Index.cshtml" />
+    <Content Include="Views\Porte\CadastrarPorte.cshtml" />
+    <Content Include="Views\Porte\AlterarPorte.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
