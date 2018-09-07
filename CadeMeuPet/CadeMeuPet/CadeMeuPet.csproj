@@ -220,6 +220,10 @@
     <Compile Include="Migrations\201809070817320_RemovendoNumeroEndereco.Designer.cs">
       <DependentUpon>201809070817320_RemovendoNumeroEndereco.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809072149467_AlterTable2.cs" />
+    <Compile Include="Migrations\201809072149467_AlterTable2.Designer.cs">
+      <DependentUpon>201809072149467_AlterTable2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Animal.cs" />
     <Compile Include="Models\Comentario.cs" />
@@ -275,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809070817320_RemovendoNumeroEndereco.resx">
       <DependentUpon>201809070817320_RemovendoNumeroEndereco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809072149467_AlterTable2.resx">
+      <DependentUpon>201809072149467_AlterTable2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
