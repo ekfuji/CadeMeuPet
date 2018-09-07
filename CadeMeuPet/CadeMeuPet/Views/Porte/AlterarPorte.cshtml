@@ -16,23 +16,24 @@
 
         <div class="jumbotron">
 
-            @Html.AntiForgeryToken()
-            @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+            @Html.AntiForgeryToken()<br />
+           
             <fieldset>
                 <legend>Editar o Porte</legend>
+                @Html.HiddenFor(model => model.PorteId)
 
-
-                @Html.LabelFor(Model => Model.Tamanho)})
+                @Html.LabelFor(Model => Model.Tamanho)
                 @Html.ValidationMessageFor(Model => Model.Tamanho, null, new { @class = "text-danger" })<br />
                 @Html.TextBoxFor(Model => Model.Tamanho,
                     new
                     {
                         @class = "form-control",
-                        @placeholder = "Tamnho"
+                        @placeholder = "Tamanho"
 
                     })<br />
+                @Html.ValidationSummary(true, null, new { @class = "text-danger" })
             </fieldset>
-            <input type="submit" value="Cadastrar" class="btn btn-success" />
+            <input type="submit" value="Alterar" class="btn btn-success" />
         </div>
     }
 </div>

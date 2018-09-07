@@ -178,9 +178,13 @@
     <Compile Include="Migrations\201809070414479_AddBanco.Designer.cs">
       <DependentUpon>201809070414479_AddBanco.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201809070419471_AlterTable.cs" />
-    <Compile Include="Migrations\201809070419471_AlterTable.Designer.cs">
-      <DependentUpon>201809070419471_AlterTable.cs</DependentUpon>
+    <Compile Include="Migrations\201809070435511_AlterTable.cs" />
+    <Compile Include="Migrations\201809070435511_AlterTable.Designer.cs">
+      <DependentUpon>201809070435511_AlterTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809070452497_AlterTable_Porte.cs" />
+    <Compile Include="Migrations\201809070452497_AlterTable_Porte.Designer.cs">
+      <DependentUpon>201809070452497_AlterTable_Porte.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Animal.cs" />
@@ -232,8 +236,11 @@
     <EmbeddedResource Include="Migrations\201809070414479_AddBanco.resx">
       <DependentUpon>201809070414479_AddBanco.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809070419471_AlterTable.resx">
-      <DependentUpon>201809070419471_AlterTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201809070435511_AlterTable.resx">
+      <DependentUpon>201809070435511_AlterTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809070452497_AlterTable_Porte.resx">
+      <DependentUpon>201809070452497_AlterTable_Porte.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

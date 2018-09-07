@@ -6,7 +6,7 @@
 
 <div class="col-sm-4">
     <br />
-    @using (Html.BeginForm("CadastroPorte", "Porte", FormMethod.Post, new { @class = "form-group", enctype = "multipart/form-data" }))
+    @using (Html.BeginForm("CadastrarPorte", "Porte", FormMethod.Post, new { @class = "form-group", enctype = "multipart/form-data" }))
     {
 
         <div class="jumbotron">
@@ -17,13 +17,13 @@
                 <legend>Cadastro do Porte</legend>
 
 
-                @Html.LabelFor(Model => Model.Tamanho)})
+                @Html.LabelFor(Model => Model.Tamanho)
                 @Html.ValidationMessageFor(Model => Model.Tamanho, null, new { @class = "text-danger" })<br />
                 @Html.TextBoxFor(Model => Model.Tamanho,
                     new
                     {
                         @class = "form-control",
-                        @placeholder = "Tamnho"
+                        
 
                     })<br />
             </fieldset>

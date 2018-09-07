@@ -7,13 +7,13 @@ namespace CadeMeuPet.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AlterTable : IMigrationMetadata
+    public sealed partial class AlterTable_Porte : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AlterTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AlterTable_Porte));
         
         string IMigrationMetadata.Id
         {
-            get { return "201809070419471_AlterTable"; }
+            get { return "201809070452497_AlterTable_Porte"; }
         }
         
         string IMigrationMetadata.Source
