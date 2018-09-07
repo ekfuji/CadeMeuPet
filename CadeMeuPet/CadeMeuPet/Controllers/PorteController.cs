@@ -69,6 +69,7 @@ namespace CadeMeuPet.Controllers
         #endregion
 
         #region Remover Porte
+        [HttpPost]
         public ActionResult RmoverPorte(int id)
         {
             if(id != 0)
