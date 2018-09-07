@@ -66,17 +66,6 @@ namespace CadeMeuPet.DAL
         }
         #endregion
 
-        #region Alterar Comentário 
-        public static bool AlterarComentario(Comentario comentario)
-        {
-            if (ctx.Comentarios.FirstOrDefault(x => x.idComentario == comentario.idComentario) != null)
-            {
-                ctx.Entry(comentario).State = EntityState.Modified;
-                ctx.SaveChanges();
-                return true;
-            }
-            return false;
-        }
-        #endregion
+
     }
 }

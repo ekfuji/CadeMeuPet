@@ -1,0 +1,32 @@
+﻿@using CadeMeuPet.Models
+@model List<Comentario>
+@{
+    ViewBag.Title = "Index";
+}
+
+<hr />
+
+<div>
+    <table class="table table-hover">
+        <tr class="table-secondary">
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Data da mensagem</th>
+            <th scope="col">Postagem</th>
+            <th scope="col">Remover</th>
+        </tr>
+
+        @foreach (Comentario comentarios in Model)
+        {
+            <tr class="table-primary">
+                <td>@comentarios.NomeComentario</td>
+                <td>@comentarios.EmailComentario</td>
+                <td>@comentarios.DataComentario</td>
+                <td>@comentarios.Animal</td>
+                <td>@Html.ActionLink("Remover", "RemoverTipo", "Tipo", new { id = comentarios.idComentario }, new { @class = "btn btn-primary" })</td>
+            </tr>
+        }
+
+    </table>
+</div>
+

@@ -1,0 +1,58 @@
+﻿@using CadeMeuPet.Models
+@model Comentario
+@{
+    ViewBag.Title = "Cadastro do Comentário";
+}
+
+
+<div class="col-sm-4">
+    <hr />
+    @using (Html.BeginForm("CadastrarComentario", "Comentario", FormMethod.Post, new { @class = "form-group", enctype = "multipart/form-data" }))
+    {
+
+        <div class="jumbotron">
+
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+            <fieldset>
+                <legend>Denuncia</legend>
+                @Html.HiddenFor(model => model.AnimalId)
+
+                @Html.LabelFor(Model => Model.NomeComentario)
+                @Html.ValidationMessageFor(Model => Model.NomeComentario, null, new { @class = "text-danger" })<br />
+                @Html.TextBoxFor(Model => Model.NomeComentario,
+                    new
+                    {
+                        @class = "form-control",
+                        @placeholder = "Seu Nome"
+
+                    })<br />
+
+                @Html.LabelFor(Model => Model.EmailComentario)
+                @Html.ValidationMessageFor(Model => Model.EmailComentario, null, new { @class = "text-danger" })<br />
+                @Html.TextBoxFor(Model => Model.EmailComentario,
+                    new
+                    {
+                        @class = "form-control",
+                        @placeholder = "Email@email.com.br"
+
+                    })<br />
+
+                @Html.LabelFor(Model => Model.Mensagem)
+                @Html.ValidationMessageFor(Model => Model.Mensagem, null, new { @class = "text-danger" })<br />
+                @Html.TextBoxFor(Model => Model.Mensagem,
+                    new
+                    {
+                        @class = "form-control",
+                        @placeholder = "Mensagem que deseja enviar"
+
+                    })<br />
+                
+            </fieldset>
+            <input type="submit" value="Cadastrar" class="btn btn-success" />
+        </div>
+    }
+</div>
+
+
+
