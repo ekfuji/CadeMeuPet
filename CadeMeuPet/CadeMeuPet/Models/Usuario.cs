@@ -46,15 +46,6 @@ namespace CadeMeuPet.Models
         [Display(Name = "Permissão de usuário")]
         public byte IsAdmin { get; set; }
 
-        [Display(Name = "Endereço")]
-        public int EnderecoId { get; set; }
-
         public string UsuarioGuid { get; set; }
-
-        public virtual Endereco Endereco { get; set; }
-
-
-
-
     }
 }

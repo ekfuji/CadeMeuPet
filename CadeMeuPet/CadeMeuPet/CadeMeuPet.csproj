@@ -166,6 +166,7 @@
     <Compile Include="DAL\AnimalDAO.cs" />
     <Compile Include="DAL\ComentarioDAO.cs" />
     <Compile Include="DAL\EnderecoDAO.cs" />
+    <Compile Include="DAL\PorteDAO.cs" />
     <Compile Include="DAL\Singleton\Singleton.cs" />
     <Compile Include="DAL\TipoDAO.cs" />
     <Compile Include="DAL\UsuarioDAO.cs" />
@@ -204,6 +205,7 @@
     <Content Include="Views\Endereco\Index.cshtml" />
     <Content Include="Views\Endereco\CadastrarEndereco.cshtml" />
     <Content Include="Views\Endereco\AlterarEndereco.cshtml" />
+    <Content Include="Views\Porte\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
