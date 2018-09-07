@@ -51,7 +51,7 @@ namespace CadeMeuPet.DAL
 
         public static List<Usuario> ListarUsuarios()
         {
-            return ctx.Usuarios.Include("Endereco").ToList();
+            return ctx.Usuarios.ToList();
         }
 
 
@@ -64,13 +64,6 @@ namespace CadeMeuPet.DAL
             return ctx.Usuarios.Find(id);
         }
 
-        #endregion
-
-        #region BUSCAR USUARIO POR GUID
-        public static Usuario BuscarUsuarioPorGuid(string guid)
-        {
-            return ctx.Usuarios.FirstOrDefault(u => u.UsuarioGuid.Equals(guid));
-        }
         #endregion
 
         #region ALTERAR USUARIO

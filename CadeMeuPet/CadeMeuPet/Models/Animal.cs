@@ -26,7 +26,7 @@ namespace CadeMeuPet.Models
         [Required(ErrorMessage = "O campo é obrigatório!")]
         [Display(Name = "Características")]
         [MaxLength(200, ErrorMessage = "O campo deve ter no máximo 200 caracteres")]
-        public string Características { get; set; }
+        public string Caracteristicas { get; set; }
 
         [Column(TypeName = "VARCHAR")]
         [Required(ErrorMessage = "O campo visto pela ultima vez é obrigatório")]

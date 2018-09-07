@@ -32,6 +32,7 @@ namespace CadeMeuPet.Models
         [Column(TypeName ="VARCHAR")]
         [MaxLength(100, ErrorMessage ="O email deve ter no máximo 100 caracteres!")]
         [Display(Name = "Email")]
+        [DataType(DataType.EmailAddress)]
         public string EmailComentario { get; set; }
 
         [Display(Name = "Animal")]

@@ -40,12 +40,13 @@ namespace CadeMeuPet.Models
         [Required(ErrorMessage = "o campo Email é obrigatório")]
         [MaxLength(100, ErrorMessage = "A senha deve ter no máximo 100 caracteres")]
         [Display(Name = "Email")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "o campo Permissão é obrigatório")]
         [Display(Name = "Permissão de usuário")]
         public byte IsAdmin { get; set; }
 
-        public string UsuarioGuid { get; set; }
+
     }
 }
