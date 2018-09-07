@@ -1,9 +1,13 @@
-﻿@using CadeMeuPet.Models
+﻿@using System.Web.Optimization
+@using CadeMeuPet.Models
 @model Endereco
 @{
     ViewBag.Title = "CadastrarEndereco";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
+
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:600" type="text/css" rel="stylesheet" />
+<link href="~/GoogleMaps/estilo.css" type="text/css" rel="stylesheet" />
 
 <div class="col-sm-4">
     @using (Html.BeginForm("CadastrarEndereco", "Endereco", FormMethod.Post, new { @class = "form-group", enctype = "multipart/form-data" }))
@@ -12,66 +16,113 @@
         @Html.ValidationSummary(true, null, new { @class = "text-danger" })
         <br/>
         <fieldset>
-            <div class="jumbotron">
-                <legend>Cadastro de Endereço</legend>
+            <div class="form-horizontal">
+                <div class="jumbotron" style="width: 620px">
+                    <legend>Cadastro de Endereço</legend>
 
 
-                @Html.LabelFor(Model => Model.Logradouro, null, new { @style = "color: #000000" })
-                @Html.ValidationMessageFor(Model => Model.Logradouro, null, new { @class = "text-danger" })<br />
-                @Html.TextBoxFor(Model => Model.Logradouro,
-                new
-                {
-                    @class = "form-control",
-                    @placeholder = "Rua, Av ..."
+                    @Html.LabelFor(Model => Model.Logradouro, null, new { @style = "color: #000000" })
+                    @Html.ValidationMessageFor(Model => Model.Logradouro, null, new { @class = "text-danger" })<br />
+                    @Html.TextBoxFor(Model => Model.Logradouro,
+                        new
+                        {
+                            @class = "form-control",
+                            @placeholder = "Rua, Av ..."
 
-                })<br />
+                        })<br />
 
 
-                @Html.LabelFor(Model => Model.Numero, null, new { @style = "color: #000000" })
-                @Html.ValidationMessageFor(Model => Model.Numero, null, new { @class = "text-danger" })<br />
-                @Html.TextBoxFor(Model => Model.Numero,
-                new
-                {
-                    @class = "form-control",
-                    @placeholder = "Nº"
 
-                })<br />
+                    @Html.LabelFor(Model => Model.CEP, null, new { @style = "color: #000000" })
+                    @Html.ValidationMessageFor(Model => Model.CEP, null, new { @class = "text-danger" })<br />
+                    @Html.TextBoxFor(Model => Model.CEP,
+                        new
+                        {
+                            @class = "form-control",
+                            @placeholder = "00000-000"
 
-                @Html.LabelFor(Model => Model.CEP, null, new { @style = "color: #000000" })
-                @Html.ValidationMessageFor(Model => Model.CEP, null, new { @class = "text-danger" })<br />
-                @Html.TextBoxFor(Model => Model.CEP,
-                new
-                {
-                    @class = "form-control",
-                    @placeholder = "00000-000"
+                        })<br />
 
-                })<br />
+                    @Html.EditorFor(model => model.Ip, new { htmlAttributes = new { @class = "esconde" } })
+
+
+                    @Html.EditorFor(model => model.Navegador, new { htmlAttributes = new { @class = "esconde" } })
+
+                    @Html.EditorFor(model => model.Latitude, new { htmlAttributes = new { @class = "esconde" } })
+
+
+                    @Html.EditorFor(model => model.Longitude, new { htmlAttributes = new { @class = "esconde" } })
+                    
+                    
+                    <div class="form-group col-lg-6">
+
+                        <div class="campos">
+                            <label for="mapa">Mapa:</label>
+
+                        </div>
+                        <div id="mapa"></div>
+
+                        <input type="hidden" id="txtLatitude" name="txtLatitude" />
+                        <input type="hidden" id="txtLongitude" name="txtLongitude" />
+
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Cadastrar" class="btn btn-success" />
+                            <a href="@Url.Action("Index", "Endereco")" class="btn btn-danger">Voltar</a>
+                        </div>
+                    </div>
+
+                </div>
                 
-                @Html.LabelFor(Model => Model.Latitude, null, new { @style = "color: #000000" })
-                @Html.ValidationMessageFor(Model => Model.Latitude, null, new { @class = "text-danger" })<br />
-                @Html.TextBoxFor(Model => Model.Latitude,
-                    new
-                    {
-                        @class = "form-control",
-                        @placeholder = "Latitude"
-
-                    })<br />
-                
-                @Html.LabelFor(Model => Model.Longitude, null, new { @style = "color: #000000" })
-                @Html.ValidationMessageFor(Model => Model.Longitude, null, new { @class = "text-danger" })<br />
-                @Html.TextBoxFor(Model => Model.Longitude,
-                    new
-                    {
-                        @class = "form-control",
-                        @placeholder = "Latitude"
-
-                    })<br />
-
-                <input type="submit" value="Cadastrar" class="btn btn-success" />
 
             </div>
-</fieldset>
+
+
+
+
+
+        </fieldset>
         
     }
+
 </div>
+
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+    <script>
+        var geocoder;
+        var map;
+        var marker;
+
+        function initialize() {
+            var latlng = new google.maps.LatLng(-25.4289541, -49.267137);
+            var options = {
+                zoom: 10,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            map = new google.maps.Map(document.getElementById("mapa"), options);
+
+            geocoder = new google.maps.Geocoder();
+
+            marker = new google.maps.Marker({
+                map: map,
+                draggable: true,
+            });
+
+            marker.setPosition(latlng);
+        }
+    </script>
+    <script type="text/javascript" src="~/GoogleMaps/mapa.js"></script>
+
+
+
 

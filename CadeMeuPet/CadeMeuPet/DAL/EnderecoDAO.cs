@@ -59,6 +59,11 @@ namespace CadeMeuPet.DAL
 
         #endregion
 
+        public IQueryable<Endereco> PesquisarPorLocal(string local)
+        {
+            return ctx.Enderecos.Where(c => c.Latitude.Trim().Contains(local.Trim()));
+        }
+
         #region BUSCAR ENDEREÇO BY CEP
 
         public static Endereco BuscarEnderecoByCEP(string CEP)

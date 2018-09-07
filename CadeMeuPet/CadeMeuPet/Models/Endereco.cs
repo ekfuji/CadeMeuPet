@@ -19,11 +19,6 @@ namespace CadeMeuPet.Models
         public string Logradouro { get; set; }
 
         [Column(TypeName = "VARCHAR")]
-        [MaxLength(6, ErrorMessage = "O número deve ter no máximo 6 caracteres!")]
-        [Display(Name = "Numero")]
-        public string Numero { get; set; }
-
-        [Column(TypeName = "VARCHAR")]
         [MaxLength(8, ErrorMessage = "O CEP deve ter no máximo 8 caracteres!")]
         [Display(Name = "CEP")]
         public string CEP { get; set; }
@@ -35,6 +30,14 @@ namespace CadeMeuPet.Models
         [Display(Name = "Longitude")]
         [Column(TypeName = "VARCHAR")]
         public string Longitude { get; set; }
+
+        [Display(Name = "IP")]
+        [Column(TypeName = "VARCHAR")]
+        public String Ip { get; set; }
+
+        [Display(Name = "Navegador")]
+        [Column(TypeName = "VARCHAR")]
+        public String Navegador { get; set; }
 
     }
 }

@@ -64,7 +64,7 @@ namespace CadeMeuPet.Controllers
                 PorteDAO.AlterarPorte(porteOriginal);
                 return RedirectToAction("Index", "Porte");
             }
-            return (porte);
+            return View(porte);
         }
         #endregion
 

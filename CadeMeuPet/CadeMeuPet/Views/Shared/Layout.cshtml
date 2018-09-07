@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -6,6 +7,14 @@
     <title></title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/estilo.css" rel="stylesheet" />
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDLHiKJZILq97DnN0qKzmUVRFGjwvZvvSA&amp;sensor=false"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
