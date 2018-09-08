@@ -157,6 +157,7 @@
     <Content Include="Content\img\background.png" />
     <Content Include="Content\img\CADEMEUPET.png" />
     <Content Include="Content\img\conta.png" />
+    <Content Include="Content\img\modalLogin.png" />
     <Content Include="Content\jquery-ui.css" />
     <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Global.asax" />
@@ -184,6 +185,7 @@
     <Content Include="scripts\jquery.validate.min.js" />
     <Content Include="scripts\jquery.validate.unobtrusive.js" />
     <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="scripts\jsglobal.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
     <Content Include="scripts\respond.js" />
     <Content Include="scripts\respond.min.js" />
@@ -200,6 +202,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PorteController.cs" />
     <Compile Include="Controllers\TipoController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DAL\AnimalDAO.cs" />
     <Compile Include="DAL\ComentarioDAO.cs" />
     <Compile Include="DAL\DenunciaDAO.cs" />
@@ -214,22 +217,6 @@
     <Compile Include="Migrations\201809070414479_AddBanco.cs" />
     <Compile Include="Migrations\201809070414479_AddBanco.Designer.cs">
       <DependentUpon>201809070414479_AddBanco.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809070536295_CamposNoEndereco.cs" />
-    <Compile Include="Migrations\201809070536295_CamposNoEndereco.Designer.cs">
-      <DependentUpon>201809070536295_CamposNoEndereco.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809070817320_RemovendoNumeroEndereco.cs" />
-    <Compile Include="Migrations\201809070817320_RemovendoNumeroEndereco.Designer.cs">
-      <DependentUpon>201809070817320_RemovendoNumeroEndereco.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809072149467_AlterTable2.cs" />
-    <Compile Include="Migrations\201809072149467_AlterTable2.Designer.cs">
-      <DependentUpon>201809072149467_AlterTable2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809072255378_AddDenuncia.cs" />
-    <Compile Include="Migrations\201809072255378_AddDenuncia.Designer.cs">
-      <DependentUpon>201809072255378_AddDenuncia.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Animal.cs" />
@@ -257,7 +244,6 @@
     <Content Include="Views\Tipo\CadastrarTipo.cshtml" />
     <Content Include="Views\Tipo\AlterarTipo.cshtml" />
     <Content Include="Views\Endereco\Index.cshtml" />
-    <Content Include="Views\Endereco\CadastrarEndereco.cshtml" />
     <Content Include="Views\Endereco\AlterarEndereco.cshtml" />
     <Content Include="Views\Porte\Index.cshtml" />
     <Content Include="Views\Porte\CadastrarPorte.cshtml" />
@@ -267,6 +253,10 @@
     <Content Include="Views\Denuncia\CadastrarDenuncia.cshtml" />
     <Content Include="Views\Comentario\Index.cshtml" />
     <Content Include="Views\Comentario\CadastrarComentario.cshtml" />
+    <Content Include="Views\Usuario\CadastrarUsuario.cshtml" />
+    <Content Include="Views\Usuario\_ModalLogin.cshtml" />
+    <Content Include="Views\Endereco\CadastrarEndereco.cshtml" />
+    <Content Include="Views\Usuario\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -284,18 +274,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201809070414479_AddBanco.resx">
       <DependentUpon>201809070414479_AddBanco.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809070536295_CamposNoEndereco.resx">
-      <DependentUpon>201809070536295_CamposNoEndereco.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809070817320_RemovendoNumeroEndereco.resx">
-      <DependentUpon>201809070817320_RemovendoNumeroEndereco.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809072149467_AlterTable2.resx">
-      <DependentUpon>201809072149467_AlterTable2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809072255378_AddDenuncia.resx">
-      <DependentUpon>201809072255378_AddDenuncia.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

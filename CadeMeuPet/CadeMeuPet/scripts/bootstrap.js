@@ -23,7 +23,12 @@ if (typeof jQuery === 'undefined') {
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
-
+var modal = document.getElementById('modal-wrapper');
+window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 
 +function ($) {
   'use strict';

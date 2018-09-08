@@ -1,0 +1,81 @@
+﻿@model CadeMeuPet.Models.Usuario
+@{
+    ViewBag.Title = "CadastrarUsuario";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+      
+@using (Html.BeginForm("CadastrarUsuario", "Usuario", FormMethod.Post, new { @class = "form-group", enctype = "multipart/form-data" }))
+{
+
+    <div class="jumbotron">
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+        <fieldset>
+            <legend>Cadastrar usuário</legend>
+
+
+            <div class="form-group">
+                @Html.LabelFor(Model => Model.Nome, null, new {@class = "control-label col-md-11"})
+                @Html.ValidationMessageFor(Model => Model.Nome, null, new {@class = "valid-feedback"})<br/>
+                @Html.TextBoxFor(Model => Model.Nome,
+                    new
+                    {
+                        @class = "form-control",
+                        @placeholder = "Digite seu nome completo."
+
+                    })<br/>
+                
+                @Html.LabelFor(Model => Model.Telefone, null, new {@class = "control-label col-md-11"})
+                @Html.ValidationMessageFor(Model => Model.Telefone, null, new {@class = "valid-feedback"})<br/>
+                @Html.TextBoxFor(Model => Model.Telefone,
+                    new
+                    {
+                        @class = "form-control",
+                        @placeholder = "Digite seu celular para contato."
+
+                    })<br/>
+
+
+                @Html.LabelFor(Model => Model.Email, null, new {@class = "control-label col-md-11"})
+                @Html.ValidationMessageFor(Model => Model.Email, null, new {@class = "text-danger"})<br/>
+                @Html.TextBoxFor(Model => Model.Email,
+                    new
+                    {
+                        @class = "form-control",
+                        @placeholder = "Ex: exemplo@exemplo.com"
+
+                    })<br/>
+
+                @Html.LabelFor(Model => Model.Password, null, new {@class = "control-label col-md-11"})
+                @Html.ValidationMessageFor(Model => Model.Password, null, new {@class = "text-danger"})<br/>
+                @Html.PasswordFor(Model => Model.Password,
+                    new
+                    {
+                        @class = "form-control",
+                        @placeholder = "Digite aqui sua senha."
+
+                    })<br/>
+
+                @Html.LabelFor(Model => Model.ConfirmacaoSenha, null, new {@class = "control-label col-md-11"})
+                @Html.ValidationMessageFor(Model => Model.ConfirmacaoSenha, null, new {@class = "text-danger"})<br/>
+                @Html.PasswordFor(Model => Model.ConfirmacaoSenha,
+                    new
+                    {
+                        @class = "form-control",
+                        @placeholder = "Digite novamente sua senha."
+
+                    })<br/>
+            </div>
+        </fieldset>
+        <input type="submit" value="Cadastrar" class="btn btn-success" />
+    </div>
+}
+
+
+
+
+
+
+</div>

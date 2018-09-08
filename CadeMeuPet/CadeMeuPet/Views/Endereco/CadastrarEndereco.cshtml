@@ -3,39 +3,39 @@
 @model Endereco
 @{
     ViewBag.Title = "CadastrarEndereco";
-    Layout = "~/Views/Shared/Layout.cshtml";
+
 }
 
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:600" type="text/css" rel="stylesheet" />
 <link href="~/GoogleMaps/estilo.css" type="text/css" rel="stylesheet" />
 
-<div class="col-sm-4">
-    @using (Html.BeginForm("CadastrarEndereco", "Endereco", FormMethod.Post, new { @class = "form-group", enctype = "multipart/form-data" }))
-    {
-        @Html.AntiForgeryToken()
-        @Html.ValidationSummary(true, null, new { @class = "text-danger" })
-        <br/>
-        <fieldset>
+
+@using (Html.BeginForm("CadastrarEndereco", "Endereco", FormMethod.Post, new { @class = "form-group", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+    <fieldset>
+        <div class="jumbotron">
             <div class="form-horizontal">
-                <div class="jumbotron" style="width: 620px">
-                    <legend>Cadastro de Endereço</legend>
+
+                <legend>Cadastro de Endereço</legend>
 
 
-                    @Html.LabelFor(Model => Model.Logradouro, null, new { @style = "color: #000000" })
-                    @Html.ValidationMessageFor(Model => Model.Logradouro, null, new { @class = "text-danger" })<br />
-                    @Html.TextBoxFor(Model => Model.Logradouro,
+                @Html.LabelFor(Model => Model.Logradouro, null, new { @style = "color: #000000" })
+                @Html.ValidationMessageFor(Model => Model.Logradouro, null, new { @class = "text-danger" })<br />
+                @Html.TextBoxFor(Model => Model.Logradouro,
                         new
                         {
                             @class = "form-control",
-                            @placeholder = "Rua, Av ..."
+                            @placeholder = "Digite aqui a última localização do animal. Ex : Rua, Av ..."
 
                         })<br />
 
 
 
-                    @Html.LabelFor(Model => Model.CEP, null, new { @style = "color: #000000" })
-                    @Html.ValidationMessageFor(Model => Model.CEP, null, new { @class = "text-danger" })<br />
-                    @Html.TextBoxFor(Model => Model.CEP,
+                @Html.LabelFor(Model => Model.CEP, null, new { @style = "color: #000000" })
+                @Html.ValidationMessageFor(Model => Model.CEP, null, new { @class = "text-danger" })<br />
+                @Html.TextBoxFor(Model => Model.CEP,
                         new
                         {
                             @class = "form-control",
@@ -43,50 +43,50 @@
 
                         })<br />
 
-                    @Html.EditorFor(model => model.Ip, new { htmlAttributes = new { @class = "esconde" } })
+                @Html.EditorFor(model => model.Ip, new { htmlAttributes = new { @class = "esconde" } })
 
 
-                    @Html.EditorFor(model => model.Navegador, new { htmlAttributes = new { @class = "esconde" } })
+                @Html.EditorFor(model => model.Navegador, new { htmlAttributes = new { @class = "esconde" } })
 
-                    @Html.EditorFor(model => model.Latitude, new { htmlAttributes = new { @class = "esconde" } })
+                @Html.EditorFor(model => model.Latitude, new { htmlAttributes = new { @class = "esconde" } })
 
 
-                    @Html.EditorFor(model => model.Longitude, new { htmlAttributes = new { @class = "esconde" } })
-                    
-                    
-                    <div class="form-group col-lg-6">
+                @Html.EditorFor(model => model.Longitude, new { htmlAttributes = new { @class = "esconde" } })
 
-                        <div class="campos">
-                            <label for="mapa">Mapa:</label>
 
-                        </div>
-                        <div id="mapa"></div>
+                <div class="form-group col-lg-6">
 
-                        <input type="hidden" id="txtLatitude" name="txtLatitude" />
-                        <input type="hidden" id="txtLongitude" name="txtLongitude" />
+                    <div class="campos">
+                        <label for="mapa">Mapa:</label>
 
                     </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Cadastrar" class="btn btn-success" />
-                            <a href="@Url.Action("Index", "Endereco")" class="btn btn-danger">Voltar</a>
-                        </div>
-                    </div>
+                    <div id="mapa"></div>
+
+                    <input type="hidden" id="txtLatitude" name="txtLatitude" />
+                    <input type="hidden" id="txtLongitude" name="txtLongitude" />
 
                 </div>
-                
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Cadastrar" class="btn btn-success" />
+                        <a href="@Url.Action("Index", "Endereco")" class="btn btn-danger">Voltar</a>
+                    </div>
+                </div>
 
             </div>
 
 
+        </div>
 
 
 
-        </fieldset>
-        
-    }
 
-</div>
+
+    </fieldset>
+
+}
+
+
 
 
 
@@ -96,7 +96,7 @@
 
 
 
-    <script>
+<script>
         var geocoder;
         var map;
         var marker;
@@ -120,8 +120,8 @@
 
             marker.setPosition(latlng);
         }
-    </script>
-    <script type="text/javascript" src="~/GoogleMaps/mapa.js"></script>
+</script>
+<script type="text/javascript" src="~/GoogleMaps/mapa.js"></script>
 
 
 

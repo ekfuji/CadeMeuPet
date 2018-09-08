@@ -19,21 +19,20 @@ namespace CadeMeuPet.Models
         public string Nome { get; set; }
 
         [Column(TypeName = "VARCHAR")]
-        [Required(ErrorMessage = "o campo Login é obrigatório")]
-        [MaxLength(20, ErrorMessage = "O Login deve ter no máximo 20 caracteres")]
-        [Display(Name = "Login")]
-        public string  UserName { get; set; }
-
-        [Column(TypeName = "VARCHAR")]
         [Required(ErrorMessage = "o campo Senha é obrigatório")]
         [MaxLength(60, ErrorMessage = "A senha deve ter no máximo 60 caracteres")]
         [DataType(DataType.Password)]
         [Display(Name = "Senha")]
         public string Password { get; set; }
 
+        [Compare("Password", ErrorMessage = "Os campos não coincidem!")]
+        [Display(Name = "Confirmação da senha")]
+        [NotMapped]
+        public string ConfirmacaoSenha { get; set; }
+
         [Column(TypeName = "VARCHAR")]
         [MaxLength(12, ErrorMessage = "O telefone deve ter no máximo 12 caracteres")]
-        [Display(Name = "Login")]
+        [Display(Name = "Telefone")]
         public string Telefone { get; set; }
 
         [Column(TypeName = "VARCHAR")]

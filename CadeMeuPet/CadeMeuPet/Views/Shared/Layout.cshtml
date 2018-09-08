@@ -1,6 +1,9 @@
 ﻿@using System.Web.Optimization
+@{
+    ViewBag.Title = "Login";
+}
 <!DOCTYPE html>
-
+@model CadeMeuPet.Models.Usuario
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -10,41 +13,105 @@
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDLHiKJZILq97DnN0qKzmUVRFGjwvZvvSA&amp;sensor=false"></script>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    @Scripts.Render("~/bundles/jsglobal")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     <script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a href='@Url.Action("Index", "Home")' style="margin-bottom: 10px; margin-top: 5px; margin-right: 20px"><img src="~/Content/img/CADEMEUPET.png" /></a>
-        <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item" style="margin-left: 10px;">
-                    @Html.ActionLink("Gerenciar Tipo", "Index", "Tipo", null, new { @class = "nav-link" })
-                </li>
-                <li class="nav-item" style="margin-left: 10px;">
-                    @Html.ActionLink("Gerenciar Endereço", "Index", "Endereco", null, new { @class = "nav-link" })
-                </li>
-                <li class="nav-item" style="margin-left: 10px;">
-                    @Html.ActionLink("Gerenciar Porte", "Index", "Porte", null, new { @class = "nav-link" })
-                </li>
-                <li class="nav-item" style="margin-left: 10px;">
-                    @Html.ActionLink("Gerenciar Denúncia", "Index", "Denuncia", null, new { @class = "nav-link" })
-                </li>
-            </ul>
-      </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a href='@Url.Action("Index", "Home")' style="margin-bottom: 10px; margin-top: 5px; margin-right: 20px"><img src="~/Content/img/CADEMEUPET.png" /></a>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item" style="margin-left: 10px;">
+                @Html.ActionLink("Gerenciar Tipo", "Index", "Tipo", null, new { @class = "nav-link" })
+            </li>
+            <li class="nav-item" style="margin-left: 10px;">
+                @Html.ActionLink("Gerenciar Endereço", "Index", "Endereco", null, new { @class = "nav-link" })
+            </li>
+            <li class="nav-item" style="margin-left: 10px;">
+                @Html.ActionLink("Gerenciar Porte", "Index", "Porte", null, new { @class = "nav-link" })
+            </li>
+            <li class="nav-item" style="margin-left: 10px;">
+                @Html.ActionLink("Gerenciar Denúncia", "Index", "Denuncia", null, new { @class = "nav-link" })
+            </li>
+        </ul>
+    </div>
+    
+@if (!Request.IsAuthenticated)
+{
+    <a onclick="document.getElementById('modal-wrapper').style.display = 'block'"> <img id="conta"  src="~/Content/img/conta.png"/></a>
+}
+else
+{
+    @Html.ActionLink("Logout", "Logout", "Usuario", null,
+        new { @class = "nav-link" })
+}
 </nav>
 
 <div>
     @RenderBody()
 </div>
 
-    <hr />
-    <footer style="text-align: center; margin-bottom: 30px">
-        <p>&copy; @DateTime.Now.Year - Desenvolvido por Estefani Fujimoto e Raphael de Lima</p>
-    </footer>
+<hr />
+<footer style="text-align: center; margin-bottom: 30px">
+    <p>&copy; @DateTime.Now.Year - Desenvolvido por Estefani Fujimoto e Raphael de Lima</p>
+</footer>
 </body>
 
 </html>
+<div class="card bg-light mb-3" style="max-width: 20rem;">
+    <div id="modal-wrapper" class="modal">
+
+        <div class="modal-content animate">
+
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('modal-wrapper').style.display = 'none'" class="close" title="Close PopUp">&times;</span>
+                <img src="~/Content/img/modalLogin.png" alt="Avatar">
+            </div>
+
+            <div class="container">
+                @using (Html.BeginForm("Login", "Usuario", FormMethod.Post, new { @class = "form-group", enctype = "multipart/form-data" }))
+                {
+
+
+
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+                        <fieldset style="padding-left: 70px;">
+                            @Html.LabelFor(Model => Model.Email, null, new {@class = "control-label col-md-12"})
+                            @Html.ValidationMessageFor(Model => Model.Email, null, new {@class = "text-danger"})<br/>
+                            @Html.TextBoxFor(Model => Model.Email,
+                                new
+                                {
+                                    @class = "form-control col-md-10",
+                                    @placeholder = "Ex: exemplo@exemplo.com"
+
+                                })<br/>
+
+                            @Html.LabelFor(Model => Model.Password, null, new {@class = "control-label col-md-12"})
+                            @Html.ValidationMessageFor(Model => Model.Password, null, new {@class = "text-danger"})<br/>
+                            @Html.PasswordFor(Model => Model.Password,
+                                new
+                                {
+                                    @class = "form-control col-md-10",
+                                    @placeholder = "Digite aqui sua senha."
+
+                                })<br/>
+                        </fieldset>
+                        <button type="submit">Login</button>
+                        <p class="text-center text-muted">Não é registrado ainda?</p>
+                        <p class="text-center text-muted"><a href='@Url.Action("CadastrarUsuario", "Usuario")'><strong>Cadastre-se agora!</strong></a><br />É muito fácil e leva apenas 1&nbsp;minuto!</p>
+                    
+                }
+
+                  
+
+
+
+                </div>
+           </div>
+        </div>
+    </div>
+

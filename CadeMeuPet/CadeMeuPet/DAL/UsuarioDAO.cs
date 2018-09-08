@@ -17,11 +17,13 @@ namespace CadeMeuPet.DAL
         {
             try
             {
-                if (BuscarUsuarioPorUserName(usuario) == null)
+                if (BuscarUsuarioPorEmail(usuario) == null)
                 {
-                    ctx.Usuarios.Add(usuario);
-                    ctx.SaveChanges();
-                    return true;
+                        usuario.IsAdmin = 0;
+                        ctx.Usuarios.Add(usuario);
+                        ctx.SaveChanges();
+                        return true;
+ 
                 }
 
                 return false;
@@ -37,15 +39,14 @@ namespace CadeMeuPet.DAL
         }
         #endregion
 
-        #region BUSCAR USUARIO POR USERNAME
+        #region BUSCAR USUARIO POR EMAIL
 
-        public static Usuario BuscarUsuarioPorUserName(Usuario usuario)
+        public static Usuario BuscarUsuarioPorEmail(Usuario usuario)
         {
-            return ctx.Usuarios.FirstOrDefault(u => u.UserName.Equals(usuario.UserName));
+            return ctx.Usuarios.FirstOrDefault(u => u.Email.Equals(usuario.Email));
         }
-
-
         #endregion
+
 
         #region LISTAR USUARIOS
 
@@ -70,7 +71,7 @@ namespace CadeMeuPet.DAL
 
         public static bool AlterarUsuario(Usuario usuario)
         {
-            if (ctx.Usuarios.FirstOrDefault(x => x.UserName.Equals(usuario.UserName)
+            if (ctx.Usuarios.FirstOrDefault(x => x.Email.Equals(usuario.Email)
             && x.Password.Equals(usuario.Password) && x.UsuarioId == usuario.UsuarioId) != null)
             {
                 ctx.Entry(usuario).State = EntityState.Modified;
@@ -95,6 +96,17 @@ namespace CadeMeuPet.DAL
         }
 
         #endregion
+
+        #region BUSCAR USUARIO POR LOGIN E SENHA
+        public static Usuario BuscarUsuarioPorLoginSenha(Usuario usuario)
+        {
+            return ctx.Usuarios.FirstOrDefault(x => x.Password == usuario.Password && x.Email == usuario.Email);
+
+        }
+
+
+        #endregion
+
 
     }
 }
