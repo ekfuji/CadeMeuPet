@@ -1,9 +1,6 @@
 ﻿@using System.Web.Optimization
-@{
-    ViewBag.Title = "Login";
-}
 <!DOCTYPE html>
-@model CadeMeuPet.Models.Usuario
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -38,15 +35,13 @@
             </li>
         </ul>
     </div>
-    
 @if (!Request.IsAuthenticated)
 {
-    <a onclick="document.getElementById('modal-wrapper').style.display = 'block'"> <img id="conta"  src="~/Content/img/conta.png"/></a>
+    <a href='@Url.Action("Login", "Usuario")' style="margin-bottom: 10px; margin-top: 5px; margin-right: 20px"> <img src="~/Content/img/conta.png" /></a>
 }
 else
 {
-    @Html.ActionLink("Logout", "Logout", "Usuario", null,
-        new { @class = "nav-link" })
+    <a href='@Url.Action("Logout", "Usuario")' style="margin-bottom: 10px; margin-top: 5px; margin-right: 20px"> <img src="~/Content/img/logout.png" /></a>
 }
 </nav>
 
@@ -61,57 +56,4 @@ else
 </body>
 
 </html>
-<div class="card bg-light mb-3" style="max-width: 20rem;">
-    <div id="modal-wrapper" class="modal">
-
-        <div class="modal-content animate">
-
-            <div class="imgcontainer">
-                <span onclick="document.getElementById('modal-wrapper').style.display = 'none'" class="close" title="Close PopUp">&times;</span>
-                <img src="~/Content/img/modalLogin.png" alt="Avatar">
-            </div>
-
-            <div class="container">
-                @using (Html.BeginForm("Login", "Usuario", FormMethod.Post, new { @class = "form-group", enctype = "multipart/form-data" }))
-                {
-
-
-
-                        @Html.AntiForgeryToken()
-                        @Html.ValidationSummary(true, null, new { @class = "text-danger" })
-                        <fieldset style="padding-left: 70px;">
-                            @Html.LabelFor(Model => Model.Email, null, new {@class = "control-label col-md-12"})
-                            @Html.ValidationMessageFor(Model => Model.Email, null, new {@class = "text-danger"})<br/>
-                            @Html.TextBoxFor(Model => Model.Email,
-                                new
-                                {
-                                    @class = "form-control col-md-10",
-                                    @placeholder = "Ex: exemplo@exemplo.com"
-
-                                })<br/>
-
-                            @Html.LabelFor(Model => Model.Password, null, new {@class = "control-label col-md-12"})
-                            @Html.ValidationMessageFor(Model => Model.Password, null, new {@class = "text-danger"})<br/>
-                            @Html.PasswordFor(Model => Model.Password,
-                                new
-                                {
-                                    @class = "form-control col-md-10",
-                                    @placeholder = "Digite aqui sua senha."
-
-                                })<br/>
-                        </fieldset>
-                        <button type="submit">Login</button>
-                        <p class="text-center text-muted">Não é registrado ainda?</p>
-                        <p class="text-center text-muted"><a href='@Url.Action("CadastrarUsuario", "Usuario")'><strong>Cadastre-se agora!</strong></a><br />É muito fácil e leva apenas 1&nbsp;minuto!</p>
-                    
-                }
-
-                  
-
-
-
-                </div>
-           </div>
-        </div>
-    </div>
 

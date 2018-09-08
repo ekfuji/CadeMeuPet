@@ -8,6 +8,7 @@ using CadeMeuPet.DAL;
 
 namespace CadeMeuPet.Controllers
 {
+    [Authorize]
     public class EnderecoController : Controller
     {
         #region VIEW LISTA DE ENDEREÇOS

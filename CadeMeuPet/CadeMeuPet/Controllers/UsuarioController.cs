@@ -16,7 +16,7 @@ namespace CadeMeuPet.Controllers
         #region VIEW PAGINA LOGIN
         public ActionResult Login()
         {
-            return RedirectToAction("CadastrarEndereco", "Endereco");
+            return View();
         }
 
 

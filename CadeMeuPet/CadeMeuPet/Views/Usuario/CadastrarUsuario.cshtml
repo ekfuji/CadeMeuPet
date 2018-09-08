@@ -16,8 +16,8 @@
             <legend>Cadastrar usuário</legend>
 
 
-            <div class="form-group">
-                @Html.LabelFor(Model => Model.Nome, null, new {@class = "control-label col-md-11"})
+            <div class="container">
+                @Html.LabelFor(Model => Model.Nome, null, new { @class = "control-label col-md-11" })
                 @Html.ValidationMessageFor(Model => Model.Nome, null, new {@class = "valid-feedback"})<br/>
                 @Html.TextBoxFor(Model => Model.Nome,
                     new
@@ -26,7 +26,7 @@
                         @placeholder = "Digite seu nome completo."
 
                     })<br/>
-                
+
                 @Html.LabelFor(Model => Model.Telefone, null, new {@class = "control-label col-md-11"})
                 @Html.ValidationMessageFor(Model => Model.Telefone, null, new {@class = "valid-feedback"})<br/>
                 @Html.TextBoxFor(Model => Model.Telefone,
@@ -74,8 +74,3 @@
 }
 
 
-
-
-
-
-</div>
