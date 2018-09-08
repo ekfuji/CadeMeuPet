@@ -1,7 +1,63 @@
-﻿
+﻿@using System.Web.Optimization
+@model CadeMeuPet.Models.Usuario
 @{
     ViewBag.Title = "Login";
+    Layout = null;
 }
+<link href="~/Content/estiloLogin.css" rel="stylesheet" />
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="card bg-light mb-3" style="max-width: 40rem;">
+        <div id="modal-wrapper" class="modal">
 
-<h2>Login</h2>
+            <form class="modal-content animate">
+
+                <div class="imgcontainer">
+                    <img src="~/Content/img/modalLogin.png" alt="Avatar">
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(Model => Model.Email, null, new {@class = "control-label col-md-11"})
+                    @Html.TextBoxFor(Model => Model.Email,
+                        new
+                        {
+                            @class = "form-control",
+                            @placeholder = "Ex: exemplo@exemplo.com"
+
+                        })<br/>
+                    @Html.ValidationMessageFor(Model => Model.Email, null, new {@class = "text-danger"})<br/>
+
+                    @Html.LabelFor(Model => Model.Password, null, new {@class = "control-label col-md-11"})                   
+                    @Html.PasswordFor(Model => Model.Password,
+                        new
+                        {
+                            @class = "form-control",
+                            @placeholder = "Digite aqui sua senha."
+
+                        })<br/>
+                    @Html.ValidationMessageFor(Model => Model.Password, null, new { @class = "text-danger" })<br />
+                    
+                    @Html.ValidationSummary(true, null,
+                        new { @class = "text-danger" })
+                    <button type="submit">Login</button>
+                    <p class="text-center text-muted">Não é registrado ainda?</p>
+                    <p class="text-center text-muted"><a href='@Url.Action("CadastrarUsuario", "Usuario")'><strong>Cadastre-se agora!</strong></a><br />É muito fácil e leva apenas 1&nbsp;minuto!</p>
+                </div>
+
+
+
+
+           
+            </form>
+        </div>
+    </div>
+
+
+        
+    
+            
+  
+}
 

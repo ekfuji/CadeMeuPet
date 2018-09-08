@@ -1,0 +1,101 @@
+﻿body {
+    background-image: url("img/background.png");
+}
+*{margin:0px; padding:0px; font-family:Helvetica, Arial, sans-serif;}
+
+/* Full-width input fields */
+
+input[type=text],input[type=password], input[type=email]  {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 10%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size:16px;
+    border-radius: 10px;
+
+}
+.text-danger {
+    color: red;
+    margin: 8px 8px 8px 10%;
+}
+label {
+    margin: 8px 8px 8px 10%;
+}
+p {
+   
+    text-align: center;
+    margin: 1%;
+}
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 35%;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    font-size:20px;
+}
+button:hover {
+    opacity: 0.8;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+
+}
+
+
+/* The Modal (background) */
+.modal {
+    color: #888888;
+    position: fixed;
+    padding: 14px 20px;
+    margin: 20px 27%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 550px;
+    height: 575px;
+    border-radius: 10px;
+    background-color: #f5f5f0;
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 4% auto 15% auto;
+    border: 1px solid #888;
+    width: 600px;
+    padding-bottom: 30px;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+.close:hover,.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    animation: zoom 0.6s
+}
+@keyframes zoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+

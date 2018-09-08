@@ -19,7 +19,7 @@ namespace CadeMeuPet.Models
         public string Nome { get; set; }
 
         [Column(TypeName = "VARCHAR")]
-        [Required(ErrorMessage = "o campo Senha é obrigatório")]
+        [Required(ErrorMessage = "O campo Senha é obrigatório")]
         [MaxLength(60, ErrorMessage = "A senha deve ter no máximo 60 caracteres")]
         [DataType(DataType.Password)]
         [Display(Name = "Senha")]
@@ -36,13 +36,13 @@ namespace CadeMeuPet.Models
         public string Telefone { get; set; }
 
         [Column(TypeName = "VARCHAR")]
-        [Required(ErrorMessage = "o campo Email é obrigatório")]
+        [Required(ErrorMessage = "O campo Email é obrigatório")]
         [MaxLength(100, ErrorMessage = "A senha deve ter no máximo 100 caracteres")]
         [Display(Name = "Email")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "o campo Permissão é obrigatório")]
+        [Required(ErrorMessage = "O campo Permissão é obrigatório")]
         [Display(Name = "Permissão de usuário")]
         public byte IsAdmin { get; set; }
 
