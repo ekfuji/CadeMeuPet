@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro do Animal";
+
+}
+
+@using CadeMeuPet.Models
+@model Animal
+@{
+    ViewBag.Title = "Cadastro do Comentário";
+}
+
+
+<div class="col-sm-4">
+    <hr />
+    @using (Html.BeginForm("CadastroAnimal", "Animal", FormMethod.Post, new { @class = "form-group", enctype = "multipart/form-data" }))
+    {
+
+        <div class="jumbotron">
+
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+            <fieldset>
+                <legend>Denuncia</legend>
+                @Html.HiddenFor(Model => Model.UsuarioId)
+  
+                @Html.LabelFor(Model => Model.NomeAnimal)
+                @Html.ValidationMessageFor(Model => Model.NomeAnimal, null, new { @class = "text-danger" })<br />
+                @Html.TextBoxFor(Model => Model.NomeAnimal,
+                    new
+                    {
+                        @class = "form-control",
+                        @placeholder = "O nome do seu Pet"
+
+                    })<br />
+
+                <div class="form-group">
+                    @Html.LabelFor(Model => Model.Porte, "Porte", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-15">
+                        @Html.DropDownList("PorteId", null, "-- Selecione --", htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(Model => Model.Porte, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(Model => Model.Tipo, "Tipo", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-15">
+                        @Html.DropDownList("TipoId", null, "-- Selecione --", htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(Model => Model.Tipo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                
+
+                @Html.LabelFor(Model => Model.Caracteristicas)
+                @Html.ValidationMessageFor(Model => Model.Caracteristicas, null, new { @class = "text-danger" })<br />
+                @Html.TextAreaFor(Model => Model.Caracteristicas,
+                    new
+                    {
+                        @class = "form-control",
+                        @placeholder = "As Características do seu Pet"
+
+                    })<br />
+
+
+                <div class="form-group">
+                    @Html.LabelFor(Model => Model.Imagem, "Foto do Animal")
+                    <div class="col-md-15">
+                        <input type="file" name="fupImagem" />
+                    </div>
+                </div>
+
+            </fieldset>
+            <input type="submit" value="Cadastrar" class="btn btn-success" />
+        </div>
+    }
+</div>
+

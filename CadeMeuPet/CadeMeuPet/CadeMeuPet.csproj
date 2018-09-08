@@ -218,6 +218,10 @@
     <Compile Include="Migrations\201809070414479_AddBanco.Designer.cs">
       <DependentUpon>201809070414479_AddBanco.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809081939219_AlterAnimalDate.cs" />
+    <Compile Include="Migrations\201809081939219_AlterAnimalDate.Designer.cs">
+      <DependentUpon>201809081939219_AlterAnimalDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Animal.cs" />
     <Compile Include="Models\Comentario.cs" />
@@ -257,6 +261,7 @@
     <Content Include="Views\Usuario\_ModalLogin.cshtml" />
     <Content Include="Views\Endereco\CadastrarEndereco.cshtml" />
     <Content Include="Views\Usuario\Login.cshtml" />
+    <Content Include="Views\Home\CadastroAnimal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -266,7 +271,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Animal\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -274,6 +279,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201809070414479_AddBanco.resx">
       <DependentUpon>201809070414479_AddBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809081939219_AlterAnimalDate.resx">
+      <DependentUpon>201809081939219_AlterAnimalDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

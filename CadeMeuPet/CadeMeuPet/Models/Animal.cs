@@ -27,7 +27,11 @@ namespace CadeMeuPet.Models
         [Display(Name = "Características")]
         [MaxLength(200, ErrorMessage = "O campo deve ter no máximo 200 caracteres")]
         public string Caracteristicas { get; set; }
-     
+
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
+        [Display(Name = "Data de Cadastro")]
+        public DateTime DataCadastro{ get; set; } = DateTime.Now;
+
         [Display(Name = "Status publicação")]
         public byte Situacao { get; set; } 
 
