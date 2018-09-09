@@ -14,7 +14,7 @@
                 @Html.AntiForgeryToken()
                 @Html.ValidationSummary(true, null, new { @class = "text-danger" })
                 <fieldset>
-                    <legend>Denuncia</legend>
+                    <div class="alert alert-dismissible alert-danger">Esta postagem é falsa ou de venda ilegal e viola o direito dos animais? Denuncie aqui!</div>
                     @Html.HiddenFor(model => model.AnimalId)
 
                     @Html.LabelFor(Model => Model.Motivo, null, new { @style = "color: #000000" })
