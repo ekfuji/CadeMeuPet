@@ -23,8 +23,8 @@
 
                 <ul class="list-group list-group-flush" style="align-self: center">
                     <li class="list-group-item">
-                        <b id=Data>@animais.DataCadastro.ToShortDateString()</b>
-                        <a href='@Url.Action("DetalhePostagem", "Home", new { id = animais.AnimalId })'><img src="~/Content/img/detalhes.png" /></a>
+                        <b id=Data style="margin-right: 2px">@animais.DataCadastro.ToShortDateString()</b>
+                        <a href='@Url.Action("DetalhesAnimal", "Home", new { id = animais.AnimalId })'><img src="~/Content/img/detalhes.png" /></a>
                     </li>
                 </ul>
             </div>

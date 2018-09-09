@@ -59,7 +59,7 @@ namespace CadeMeuPet.DAL
         #region Buscar Animal Pelo id
         public static Animal BuscarById(int id)
         {
-            return ctx.Animais.Where(x => x.AnimalId == id).FirstOrDefault();
+            return ctx.Animais.FirstOrDefault(x => x.AnimalId == id);
         }
         #endregion
 

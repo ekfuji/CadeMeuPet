@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -17,6 +18,22 @@ namespace CadeMeuPet.Controllers
         public ActionResult Index()
         {
             return View(AnimalDAO.BuscarAnimais());
+        }
+        #endregion
+
+        #region DetalhesAnimal
+
+        public ActionResult DetalhesAnimal(int id)
+        {
+            if (id == 0)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            if (AnimalDAO.BuscarById(id) == null)
+            {
+                return HttpNotFound();
+            }
+            return View(AnimalDAO.BuscarById(id));
         }
         #endregion
 

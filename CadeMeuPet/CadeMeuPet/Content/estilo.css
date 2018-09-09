@@ -16,16 +16,27 @@
 }
 .row {
     overflow: hidden;
-    margin: 8px 72px 8px;
+    margin: 8px 72px 8px 10px;
     overflow: hidden;
 
 }
-
+small {
+    margin-left: 180px;
+}
+#card {
+    text-align: center;
+    align-items: center;
+    width: 300px;
+    height: 450px; 
+    overflow: hidden;
+    margin: 6px ;
+    padding: 13px;
+}
 .card.mb-3 {
     text-align: center;
     align-items: center;
     width: 300px;
-    height: 400px; 
+    height: 450px; 
     overflow: hidden;
     margin: 6px ;
     padding: 13px;
@@ -39,7 +50,7 @@
     top: 0;
     width: 610px;
     height: 100%;   
-    margin: 4% auto 4% auto;
+    margin: 2% auto 4% auto;
     border: 1px;
     
 }
@@ -103,6 +114,9 @@ button:hover {
     cursor: pointer;
 }
 
+
+
+
 /* Add Zoom Animation */
 .animate {
     animation: zoom 0.6s
@@ -110,5 +124,7 @@ button:hover {
 @keyframes zoom {
     from {transform: scale(0)} 
     to {transform: scale(1)}
+
+
 }
 
