@@ -16,11 +16,13 @@
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true, null, new { @class = "text-danger" })
     <fieldset>
+        
         <div class="jumbotron">
             <div class="form-horizontal">
 
-                <legend>Cadastro de Endereço</legend>
+        <h3>Qual foi a ultima localização do seu Bichinho?</h3>        
                
+                <br />
 
                 @Html.LabelFor(Model => Model.Logradouro, null, new { @style = "color: #000000" })
                 @Html.ValidationMessageFor(Model => Model.Logradouro, null, new { @class = "text-danger" })<br />
@@ -70,7 +72,7 @@
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
                         <input type="submit" value="Cadastrar" class="btn btn-success" />
-                        <a href="@Url.Action("Index", "Endereco")" class="btn btn-danger">Voltar</a>
+                        @*<a href="@Url.Action("Index", "Endereco")" class="btn btn-danger">Voltar</a>*@
                     </div>
                 </div>
 

@@ -228,6 +228,10 @@
     <Compile Include="Migrations\201809082132488_EnderecoAnimal.Designer.cs">
       <DependentUpon>201809082132488_EnderecoAnimal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809090517358_AlterTableEndereco.cs" />
+    <Compile Include="Migrations\201809090517358_AlterTableEndereco.Designer.cs">
+      <DependentUpon>201809090517358_AlterTableEndereco.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Animal.cs" />
     <Compile Include="Models\Comentario.cs" />
@@ -291,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809082132488_EnderecoAnimal.resx">
       <DependentUpon>201809082132488_EnderecoAnimal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809090517358_AlterTableEndereco.resx">
+      <DependentUpon>201809090517358_AlterTableEndereco.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

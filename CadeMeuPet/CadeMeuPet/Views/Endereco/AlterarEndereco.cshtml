@@ -14,7 +14,7 @@
         <fieldset>
             <div class="jumbotron">
                     <p>Alterar Endereço</p>
-                @Html.HiddenFor(model => model.AnimalId)
+                @Html.HiddenFor(Model => Model.EnderecoId)
 
                 @Html.LabelFor(Model => Model.Logradouro, null, new { @style = "color: #000000" })
                 @Html.ValidationMessageFor(Model => Model.Logradouro, null, new { @class = "text-danger" })<br />

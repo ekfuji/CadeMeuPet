@@ -38,11 +38,13 @@ namespace CadeMeuPet.Controllers
         #endregion
 
         #region Pag Cadastro do Animal
-        public ActionResult CadastrarAnimal()
+        public ActionResult CadastrarAnimal(int EnderecoId)
         {
             
             ViewBag.PorteId = new SelectList(PorteDAO.BuscarPortes(), "PorteId", "Tamanho");
             ViewBag.TipoId = new SelectList(TipoDAO.BuscarTipos(), "TipoId", "Especie");
+            TempData["EnderecoId"] = EnderecoId;
+
             return View();
         }
         #endregion
@@ -59,7 +61,10 @@ namespace CadeMeuPet.Controllers
                 Usuario usuario = UsuarioDAO.BuscarUsuarioPorEmail(userName);
                 animal.Situacao = 0;
                 animal.UsuarioId = usuario.UsuarioId;
-                
+
+                var id = TempData["EnderecoId"];
+                animal.EnderecoId = Convert.ToInt32(id);
+
                 if (ModelState.IsValid)
                 {
 
@@ -81,7 +86,7 @@ namespace CadeMeuPet.Controllers
                     if (animalAntigo == null)
                     {
                         AnimalDAO.CadastrarAnimal(animal);
-                        return RedirectToAction("CadastrarEndereco", "Endereco", new { id = animal.AnimalId });
+                        return RedirectToAction("Index", "Home");
                     }
                     else
                     {
