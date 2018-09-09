@@ -197,7 +197,6 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AnimalController.cs" />
     <Compile Include="Controllers\ComentarioController.cs" />
     <Compile Include="Controllers\DenunciaController.cs" />
     <Compile Include="Controllers\EnderecoController.cs" />
@@ -223,6 +222,10 @@
     <Compile Include="Migrations\201809081939219_AlterAnimalDate.cs" />
     <Compile Include="Migrations\201809081939219_AlterAnimalDate.Designer.cs">
       <DependentUpon>201809081939219_AlterAnimalDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809082132488_EnderecoAnimal.cs" />
+    <Compile Include="Migrations\201809082132488_EnderecoAnimal.Designer.cs">
+      <DependentUpon>201809082132488_EnderecoAnimal.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Animal.cs" />
@@ -262,7 +265,7 @@
     <Content Include="Views\Usuario\CadastrarUsuario.cshtml" />
     <Content Include="Views\Endereco\CadastrarEndereco.cshtml" />
     <Content Include="Views\Usuario\Login.cshtml" />
-    <Content Include="Views\Home\CadastroAnimal.cshtml" />
+    <Content Include="Views\Home\CadastrarAnimal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -283,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809081939219_AlterAnimalDate.resx">
       <DependentUpon>201809081939219_AlterAnimalDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809082132488_EnderecoAnimal.resx">
+      <DependentUpon>201809082132488_EnderecoAnimal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

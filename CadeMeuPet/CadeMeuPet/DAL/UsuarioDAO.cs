@@ -17,7 +17,7 @@ namespace CadeMeuPet.DAL
         {
             try
             {
-                if (BuscarUsuarioPorEmail(usuario) == null)
+                if (BuscarUsuarioPorEmail(usuario.Email) == null)
                 {
                         usuario.IsAdmin = 0;
                         ctx.Usuarios.Add(usuario);
@@ -41,9 +41,9 @@ namespace CadeMeuPet.DAL
 
         #region BUSCAR USUARIO POR EMAIL
 
-        public static Usuario BuscarUsuarioPorEmail(Usuario usuario)
+        public static Usuario BuscarUsuarioPorEmail(string email)
         {
-            return ctx.Usuarios.FirstOrDefault(u => u.Email.Equals(usuario.Email));
+            return ctx.Usuarios.FirstOrDefault(u => u.Email.Equals(email));
         }
         #endregion
 

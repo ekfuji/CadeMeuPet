@@ -2,7 +2,8 @@
 @model Endereco
 @{
     ViewBag.Title = "AlterarEndereco";
-    Layout = "~/Views/Shared/Layout.cshtml";
+    Animal animal = new Animal();
+    animal.AnimalId = Convert.ToInt32(TempData["AnimalId"]);
 }
 
 <div class="col-sm-4">
@@ -13,8 +14,8 @@
         <br />
         <fieldset>
             <div class="jumbotron">
-                <legend>Alterar Endereço</legend>
-                @Html.HiddenFor(model => model.EnderecoId)
+                    <p>Alterar Endereço</p>
+                @Html.HiddenFor(model => model.AnimalId)
 
                 @Html.LabelFor(Model => Model.Logradouro, null, new { @style = "color: #000000" })
                 @Html.ValidationMessageFor(Model => Model.Logradouro, null, new { @class = "text-danger" })<br />
@@ -26,16 +27,6 @@
 
                 })<br />
 
-
-                @Html.LabelFor(Model => Model.Numero, null, new { @style = "color: #000000" })
-                @Html.ValidationMessageFor(Model => Model.Numero, null, new { @class = "text-danger" })<br />
-                @Html.TextBoxFor(Model => Model.Numero,
-                new
-                {
-                    @class = "form-control",
-                    @placeholder = "Nº"
-
-                })<br />
 
                 @Html.LabelFor(Model => Model.CEP, null, new { @style = "color: #000000" })
                 @Html.ValidationMessageFor(Model => Model.CEP, null, new { @class = "text-danger" })<br />

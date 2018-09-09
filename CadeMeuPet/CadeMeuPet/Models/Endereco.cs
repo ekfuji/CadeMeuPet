@@ -39,5 +39,9 @@ namespace CadeMeuPet.Models
         [Column(TypeName = "VARCHAR")]
         public String Navegador { get; set; }
 
+        [Display(Name = "Animal")]
+        public int AnimalId { get; set; }
+
+        public virtual Animal Animal { get; set; }
     }
 }

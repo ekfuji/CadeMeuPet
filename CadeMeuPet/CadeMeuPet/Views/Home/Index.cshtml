@@ -10,7 +10,10 @@
 </div>*@
 
 <div class="row" style="-ms-grid-column-align: center ">
-    @foreach (Animal animais in Model)
+    @if(Model != null){
+
+
+    foreach (Animal animais in Model)
     {
         <div class="card border-primary mb-3" style="max-width: 30rem; text-align: center; margin-left: 20px; margin-top: 20px">
             <div class="card-header"><b>@animais.NomeAnimal</b></div>
@@ -25,5 +28,6 @@
                 </li>
             </ul>
         </div>
+      }
     }
 </div>
