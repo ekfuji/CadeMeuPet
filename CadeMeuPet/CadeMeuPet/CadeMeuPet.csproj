@@ -272,6 +272,7 @@
     <Content Include="Views\Usuario\Login.cshtml" />
     <Content Include="Views\Home\CadastrarAnimal.cshtml" />
     <Content Include="Views\Home\DetalhesAnimal.cshtml" />
+    <Content Include="Views\Home\AlterarAnimal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

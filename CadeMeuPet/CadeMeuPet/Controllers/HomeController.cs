@@ -102,5 +102,55 @@ namespace CadeMeuPet.Controllers
         }
         #endregion
 
+        #region Pag Alterar Animal
+        public ActionResult AlterarAnimal(int id)
+        {
+            return View(AnimalDAO.BuscarById(id));
+        }
+        #endregion
+
+        #region Alterar Animal
+        public ActionResult AlterarAnimal(Animal animalAlterado ,HttpPostedFileBase fupImagem)
+        {
+            
+            Animal animalAntigo = AnimalDAO.BuscarById(animalAlterado.AnimalId);
+            animalAntigo.NomeAnimal = animalAlterado.NomeAnimal;
+            animalAntigo.PorteId = animalAlterado.PorteId;
+            animalAntigo.TipoId = animalAlterado.TipoId;
+            animalAntigo.Caracteristicas = animalAlterado.Caracteristicas;
+
+            if (ModelState.IsValid)
+            {
+                if (fupImagem != null)
+                {
+                    string nomeImagem = Path.GetFileName(fupImagem.FileName);
+                    string caminho = Path.Combine(Server.MapPath("~/Images/"), fupImagem.FileName);
+
+                    fupImagem.SaveAs(caminho);
+
+                    animalAntigo.Imagem = nomeImagem;
+                }
+                else
+                {
+                    animalAntigo.Imagem = "semimagem.jpg";
+                }
+
+                if (AnimalDAO.AlterarAnimal(animalAntigo))
+                {
+                    return RedirectToAction("DetalhesAnimal", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Animal já cadastrado nos sistema!");
+                    return View(animalAntigo);
+                }
+
+            }
+            else
+            {
+                return View(animalAntigo);
+            }
+        }
+        #endregion
     }
 }
