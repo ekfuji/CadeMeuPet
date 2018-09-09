@@ -13,21 +13,37 @@
     @if(Model != null){
 
 
-    foreach (Animal animais in Model)
-    {
-        <div class="card border-primary mb-3" style="max-width: 30rem; text-align: center; margin-left: 20px; margin-top: 20px">
-            <div class="card-header"><b>@animais.NomeAnimal</b></div>
+        foreach (Animal animais in Model)
+        {
+            <div class="card mb-3">
+                <div><b>@animais.NomeAnimal</b></div>
+                <div class="card bg-light mb-3" style="max-width: 25rem; display: block">
+                    <img id="fotoAnimal" src="~/Images/@animais.Imagem" /><br />
+                </div>
 
-            <img src="~/Images/@animais.Imagem" style="width: 220px; height: 220px; align-self: center" /><br />
-
-
-            <ul class="list-group list-group-flush" style="align-self: center">
-                <li class="list-group-item">
-                    <b>@animais.DataCadastro</b>
-                    <a href='@Url.Action("DetalhePostagem", "Home", new { id = animais.AnimalId })'>Detalhes da Postagem</a>
-                </li>
-            </ul>
-        </div>
-      }
+                <ul class="list-group list-group-flush" style="align-self: center">
+                    <li class="list-group-item">
+                        <b id=Data style="margin-right: 2px">@animais.DataCadastro.ToShortDateString()</b>
+                        <a href='@Url.Action("DetalhesAnimal", "Home", new { id = animais.AnimalId })'><img src="~/Content/img/detalhes.png" /></a>
+                    </li>
+                </ul>
+            </div>
+        }
     }
 </div>
+
+<script>
+    $('#Data').val(dataAtualFormatada);
+    function dataAtualFormatada() {
+        var data = new Date();
+        var dia = data.getDate();
+        if (dia.toString().length == 1)
+            dia = "0" + dia;
+        var mes = data.getMonth() + 1;
+        if (mes.toString().length == 1)
+            mes = "0" + mes;
+        var ano = data.getFullYear();
+        return dia + "/" + mes + "/" + ano;
+    }
+</script>
+
