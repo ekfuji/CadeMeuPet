@@ -21,11 +21,8 @@ namespace CadeMeuPet.Controllers
         #endregion
 
         #region  VIEW PAGINA CADASTRAR ENDEREÇO
-        public ActionResult CadastrarEndereco(int id)
-        {
-            ViewBag.Animal = AnimalDAO.BuscarById(id);
-            TempData["AnimalId"] = id;
-            
+        public ActionResult CadastrarEndereco()
+        {   
             return View();
         }
         #endregion
@@ -44,11 +41,11 @@ namespace CadeMeuPet.Controllers
         {
             if (ModelState.IsValid)
             {
-                var id = TempData["AnimalId"];
-                endereco.AnimalId = Convert.ToInt32(id);
+               
                 if (EnderecoDAO.CadastrarEndereco(endereco))
                 {
-                    return RedirectToAction("Index", "Endereco");
+                    
+                    return RedirectToAction("CadastrarAnimal", "Home",new { EnderecoId = endereco.EnderecoId });
                 }
                 else
                 {
