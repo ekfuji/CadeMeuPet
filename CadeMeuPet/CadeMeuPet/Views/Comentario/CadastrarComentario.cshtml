@@ -5,8 +5,7 @@
 }
 
 
-<div class="col-sm-4">
-    <hr />
+
     @using (Html.BeginForm("CadastrarComentario", "Comentario", FormMethod.Post, new { @class = "form-group", enctype = "multipart/form-data" }))
     {
 
@@ -49,10 +48,11 @@
                     })<br />
                 
             </fieldset>
-            <input type="submit" value="Cadastrar" class="btn btn-success" />
+            <input type="submit" value="Salvar Mensagem" class="btn btn-success" />
+            <a style="margin-left: 10px; margin-right: 10px;" href='@Url.Action("Index", "Home")' class="btn btn-primary">Voltar para a home</a>
         </div>
     }
-</div>
+
 
 
 

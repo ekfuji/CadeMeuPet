@@ -9,8 +9,6 @@
     ViewBag.Title = "Cadastrar Porte";
 }
 
-<div class="col-sm-4">
-    <br />
     @using (Html.BeginForm("AlterarPorte", "Porte", FormMethod.Post, new { @class = "form-group", enctype = "multipart/form-data" }))
     {
 
@@ -36,5 +34,4 @@
             <input type="submit" value="Alterar" class="btn btn-success" />
         </div>
     }
-</div>
 

@@ -10,14 +10,17 @@
 <div class="jumbotron" style="width: 950px; height: 620px;">
 
     <div id="card" class="card" style="float: left; margin-top: -20px; margin-right: 30px; height: 500px; ">
-        <span class="badge badge-primary" style="width:70px; margin-left: 180px;">@Html.DisplayFor(model => model.DataCadastro)</span> 
+        <span class="badge badge-primary" style="width:70px; margin-right: 180px;">@Html.DisplayFor(model => model.DataCadastro)</span> 
         <h2>@Html.DisplayFor(model => model.NomeAnimal)</h2>
         <img src="~/Images/@Model.Imagem" style="width: 200px; height: 200px; align-self: center"/><br/>
 
         <p class="mb-1"><b>Porte: </b> @Html.DisplayFor(model => model.Porte.Tamanho)</p>
         <p class="mb-1"><b>Especie: </b>@Html.DisplayFor(model => model.Tipo.Especie)</p>
         <div><b>Características: </b><footer class="blockquote-footer" style="height: 100%">@Html.DisplayFor(model => model.Caracteristicas)</footer></div>
-
+        <input type="hidden" id="txtLatitude" value="@Model.Endereco.Latitude" />
+        <input type="hidden" id="txtLongitude" value="@Model.Endereco.Longitude" />
+      
+      
     </div>
     <b>Última localização:</b>
     <div class="campos" style="float: right"> 
@@ -31,19 +34,7 @@
 
     </div>
     <div id="mapa" ></div>
-
-    <input type="hidden" id="txtLatitude" name="txtLatitude"/>
-    <input type="hidden" id="txtLongitude" name="txtLongitude"/>
-
-
 </div>
-
-
-
-
-
-
-
 
 @section scripts{
     @Scripts.Render("~/bundles/jqueryval")
@@ -52,11 +43,13 @@
     var geocoder;
     var map;
     var marker;
-
+    var lat = $("#txtLatitude").val();
+    var long = $("#txtLongitude").val();
+  
     function initialize() {
-        var latlng = new google.maps.LatLng(-25.4289541, -49.267137);
+        var latlng = new google.maps.LatLng(lat, long);
         var options = {
-            zoom: 30,
+            zoom: 16,
             center: latlng,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
