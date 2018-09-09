@@ -19,8 +19,10 @@ namespace CadeMeuPet.Controllers
         #endregion
 
         #region Pag Cadastrar do Comentário
-        public ActionResult CadastrarComentario()
+        public ActionResult CadastrarComentario(int id)
         {
+            Animal animal = AnimalDAO.BuscarById(id);
+            TempData["AnimalId"] = animal.AnimalId;
             return View();
         }
         #endregion
@@ -30,10 +32,15 @@ namespace CadeMeuPet.Controllers
         public ActionResult CadastrarComentario(Comentario comentario)
         {
             comentario.DataComentario = DateTime.Now;
+            comentario.AnimalId = Convert.ToInt32(TempData["AnimalId"]);
             if (ModelState.IsValid)
             {
-                ComentarioDAO.CadastrarComentario(comentario);
-                return RedirectToAction("Index", "Animal");
+                if(comentario.AnimalId != 0)
+                {
+                    ComentarioDAO.CadastrarComentario(comentario);
+                    return RedirectToAction("DetalhesAnimal", "Home", new { id = comentario.AnimalId });
+                }
+                ModelState.AddModelError("", "Não foi possível enviar o comentário, volte para página inicial e tente novamente!");
             }
             return View(comentario);
         }
