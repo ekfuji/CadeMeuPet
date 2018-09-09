@@ -3,6 +3,7 @@
 @model Endereco
 @{
     ViewBag.Title = "CadastrarEndereco";
+ 
 
 }
 
@@ -13,14 +14,14 @@
 @using (Html.BeginForm("CadastrarEndereco", "Endereco", FormMethod.Post, new { @class = "form-group", enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+    @Html.ValidationSummary(true, null, new { @class = "text-danger" })
     <fieldset>
         <div class="jumbotron">
             <div class="form-horizontal">
 
                 <legend>Cadastro de Endereço</legend>
+               
 
-                @Html.ValidationSummary(true, null, new { @class = "text-danger" })
                 @Html.LabelFor(Model => Model.Logradouro, null, new { @style = "color: #000000" })
                 @Html.ValidationMessageFor(Model => Model.Logradouro, null, new { @class = "text-danger" })<br />
                 @Html.TextBoxFor(Model => Model.Logradouro,
