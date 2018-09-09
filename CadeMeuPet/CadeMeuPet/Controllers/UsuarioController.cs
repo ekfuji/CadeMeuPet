@@ -33,7 +33,7 @@ namespace CadeMeuPet.Controllers
 
         #region CADASTRAR USUARIO
         [HttpPost]
-        public ActionResult CadastrarUsuario([Bind(Include = "UsuarioId,Nome,Email,Password,ConfirmacaoSenha")] Usuario usuario)
+        public ActionResult CadastrarUsuario([Bind(Include = "UsuarioId,Nome,Telefone,Email,Password,ConfirmacaoSenha")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
