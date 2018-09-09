@@ -29,7 +29,7 @@ namespace CadeMeuPet.Controllers
             return View();
         }
         #endregion
-
+        
         #region Cadastro do Animal
         [HttpPost]
         public ActionResult CadastrarAnimal(HttpPostedFileBase fupImagem, Animal animal)
@@ -42,7 +42,7 @@ namespace CadeMeuPet.Controllers
                 Usuario usuario = UsuarioDAO.BuscarUsuarioPorEmail(userName);
                 animal.Situacao = 0;
                 animal.UsuarioId = usuario.UsuarioId;
-         
+                
                 if (ModelState.IsValid)
                 {
 
@@ -64,8 +64,7 @@ namespace CadeMeuPet.Controllers
                     if (animalAntigo == null)
                     {
                         AnimalDAO.CadastrarAnimal(animal);
-                        
-                        return RedirectToAction("CadastrarEndereco", "Endereco");
+                        return RedirectToAction("CadastrarEndereco", "Endereco", new { id = animal.AnimalId });
                     }
                     else
                     {
@@ -80,5 +79,6 @@ namespace CadeMeuPet.Controllers
             return View(animal);
         }
         #endregion
+
     }
 }

@@ -6,8 +6,8 @@
 }
 
 
-<div class="col-sm-4">
-    <hr />
+
+
     @using (Html.BeginForm("CadastrarAnimal", "Home", FormMethod.Post, new { @class = "form-group", enctype = "multipart/form-data" }))
     {
 
@@ -17,7 +17,7 @@
             @Html.ValidationSummary(true, null, new { @class = "text-danger" })
             <fieldset>
                 <legend>Cadastro do Seu Pet</legend>
-                @Html.HiddenFor(Model => Model.AnimalId)
+              
   
                 @Html.LabelFor(Model => Model.NomeAnimal)
                 @Html.ValidationMessageFor(Model => Model.NomeAnimal, null, new { @class = "text-danger" })<br />
@@ -68,5 +68,5 @@
             <input type="submit" value="Next" class="btn btn-success" />
         </div>
     }
-</div>
+
 

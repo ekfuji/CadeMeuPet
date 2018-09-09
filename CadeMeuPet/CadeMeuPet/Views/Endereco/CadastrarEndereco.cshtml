@@ -3,6 +3,7 @@
 @model Endereco
 @{
     ViewBag.Title = "CadastrarEndereco";
+ 
 
 }
 
@@ -19,7 +20,7 @@
             <div class="form-horizontal">
 
                 <legend>Cadastro de Endereço</legend>
-
+               
 
                 @Html.LabelFor(Model => Model.Logradouro, null, new { @style = "color: #000000" })
                 @Html.ValidationMessageFor(Model => Model.Logradouro, null, new { @class = "text-danger" })<br />
