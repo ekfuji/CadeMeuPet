@@ -33,15 +33,19 @@ small {
     padding: 13px;
 }
 .card.mb-3 {
+    left: 90px;
     text-align: center;
     align-items: center;
-    width: 250px;
+    width: 220px;
     height: 350px; 
     overflow: hidden;
     margin: 6px ;
     padding: 13px;
     
                 
+}
+.card.bg-light.mb-3 {
+    left: 0px;
 }
 .jumbotron {
     position: relative;
