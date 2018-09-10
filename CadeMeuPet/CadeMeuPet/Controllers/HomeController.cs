@@ -13,7 +13,7 @@ namespace CadeMeuPet.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
+        
         #region Index
         public ActionResult Index()
         {
@@ -38,6 +38,7 @@ namespace CadeMeuPet.Controllers
         #endregion
 
         #region Pag Cadastro do Animal
+        [Authorize]
         public ActionResult CadastrarAnimal(int EnderecoId)
         {
             
@@ -103,6 +104,7 @@ namespace CadeMeuPet.Controllers
         #endregion
 
         #region Pag Alterar Animal
+        [Authorize]
         public ActionResult AlterarAnimal(int id)
         {
             return View(AnimalDAO.BuscarById(id));
