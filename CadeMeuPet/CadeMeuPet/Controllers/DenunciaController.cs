@@ -13,6 +13,7 @@ namespace CadeMeuPet.Controllers
 
         #region Index
         // GET: Denuncia
+        [Authorize]
         public ActionResult Index()
         {
             return View(DenunciaDAO.BuscarDenuncias());

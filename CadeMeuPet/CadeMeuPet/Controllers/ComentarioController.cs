@@ -10,7 +10,7 @@ namespace CadeMeuPet.Controllers
 {
     public class ComentarioController : Controller
     {
-        // GET: Comentario
+        [Authorize]
         #region Index
         public ActionResult Index()
         {

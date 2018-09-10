@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace CadeMeuPet.Controllers
 {
+    [Authorize]
     public class PorteController : Controller
     {
 
