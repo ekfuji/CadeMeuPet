@@ -17,47 +17,48 @@
     <script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a href='@Url.Action("Index", "Home")' style="margin-bottom: 10px; margin-top: 5px; margin-right: 20px"><img src="~/Content/img/CADEMEUPET.png" /></a>
-    <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item" style="margin-left: 10px;">
-                @Html.ActionLink("Gerenciar Tipo", "Index", "Tipo", null, new { @class = "nav-link" })
-            </li>
-            <li class="nav-item" style="margin-left: 10px;">
-                @Html.ActionLink("Gerenciar Endereço", "Index", "Endereco", null, new { @class = "nav-link" })
-            </li>
-            <li class="nav-item" style="margin-left: 10px;">
-                @Html.ActionLink("Gerenciar Porte", "Index", "Porte", null, new { @class = "nav-link" })
-            </li>
-            <li class="nav-item" style="margin-left: 10px;">
-                @Html.ActionLink("Cadastrar Animal", "CadastrarEndereco", "Endereco",null,  new { @class = "nav-link" })
-            </li>
-            <li class="nav-item" style="margin-left: 10px;">
-                @Html.ActionLink("Gerenciar Denúncia", "Index", "Denuncia", null, new { @class = "nav-link" })
-            </li>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a href='@Url.Action("Index", "Home")' style="margin-bottom: 10px; margin-top: 5px; margin-right: 20px"><img src="~/Content/img/CADEMEUPET.png" /></a>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav" style="margin-right: 20px">
+                <li class="dropdown" style="margin-left: 10px; margin-right: 15px">
+                    <a href="javascript:void(0)" class="dropbtn" style="text-decoration: none;">Gerenciar website</a>
+                    <div class="dropdown-content">
+                        @Html.ActionLink("Gerenciar Tipo", "Index", "Tipo", null, new { @class = "nav-link" })
+                        @Html.ActionLink("Gerenciar Porte", "Index", "Porte", null, new { @class = "nav-link" })
+                        <div class="dropdown-divider"></div>
+                        @Html.ActionLink("Denúncias", "Index", "Denuncia", null, new { @class = "nav-link" })
+                    </div>
+                </li>
+                <ul class="navbar-nav">
+                    <li class="dropdown" style="margin-left: 10px;">
+                        <a href="javascript:void(0)" class="dropbtn" style="text-decoration: none;">Gerenciar postagem</a>
+                        <div class="dropdown-content">
+                            @Html.ActionLink("Cadastrar Animal", "CadastrarEndereco", "Endereco", null, new { @class = "nav-link" })
+                            <div class="dropdown-divider"></div>
+                            @Html.ActionLink("Mensagens", "Index", "Comentario", null, new { @class = "nav-link" })
+                        </div>
+                </ul>
+            </ul>
+        </div>
+        @if (!Request.IsAuthenticated)
+        {
+            <a href='@Url.Action("Login", "Usuario")' style="margin-bottom: 10px; margin-top: 5px; margin-right: 20px"> <img src="~/Content/img/conta.png" /></a>
+        }
+        else
+        {
+            <a href='@Url.Action("Logout", "Usuario")' style="margin-bottom: 10px; margin-top: 5px; margin-right: 20px"> <img src="~/Content/img/logout.png" /></a>
+        }
+    </nav>
 
-        </ul>
+    <div>
+        @RenderBody()
     </div>
-@if (!Request.IsAuthenticated)
-{
-    <a href='@Url.Action("Login", "Usuario")' style="margin-bottom: 10px; margin-top: 5px; margin-right: 20px"> <img src="~/Content/img/conta.png" /></a>
-}
-else
-{
-    <a href='@Url.Action("Logout", "Usuario")' style="margin-bottom: 10px; margin-top: 5px; margin-right: 20px"> <img src="~/Content/img/logout.png" /></a>
-}
-</nav>
 
-<div>
-    @RenderBody()
-</div>
-
-<hr />
-<footer style="text-align: center; margin-bottom: 30px">
-    <p>&copy; @DateTime.Now.Year - Desenvolvido por Estefani Fujimoto e Raphael de Lima</p>
-</footer>
+    <hr />
+    <footer style="text-align: center; margin-bottom: 30px">
+        <p>&copy; @DateTime.Now.Year - Desenvolvido por Estefani Fujimoto e Raphael de Lima</p>
+    </footer>
 </body>
 
 </html>
-
