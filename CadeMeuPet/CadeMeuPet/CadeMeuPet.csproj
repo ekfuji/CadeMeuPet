@@ -157,8 +157,8 @@
     <Content Include="Content\estiloLogin.css" />
     <Content Include="Content\img\background.png" />
     <Content Include="Content\img\CADEMEUPET.png" />
-    <Content Include="Content\img\conta.png" />
     <Content Include="Content\img\detalhes.png" />
+    <Content Include="Content\img\login.png" />
     <Content Include="Content\img\logout.png" />
     <Content Include="Content\img\modalLogin.png" />
     <Content Include="Content\jquery-ui.css" />
