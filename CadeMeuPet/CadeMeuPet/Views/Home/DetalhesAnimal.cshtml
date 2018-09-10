@@ -26,8 +26,8 @@
     <div class="campos" style="float: right"> 
         <p>
             <a style="float: right; margin-left: 10px; margin-right: 10px;" href='@Url.Action("Index", "Home")' class="btn btn-primary">Voltar para a lista</a>
-            <a style="float: right" href='@Url.Action("CadastrarComentario", "Comentario")' class="btn btn-info">Enviar Mensagem</a>
-            <a style="float: right; margin-right: 10px;" href='@Url.Action("CadastrarDenuncia", "Denuncia")' class="btn btn btn-danger">Reportar</a>
+            <a style="float: right" href='@Url.Action("CadastrarComentario", "Comentario", new { @id = Model.AnimalId})' class="btn btn-info">Enviar Mensagem</a>
+            <a style="float: right; margin-right: 10px;" href='@Url.Action("CadastrarDenuncia", "Denuncia", new { @id = Model.AnimalId})' class="btn btn btn-danger">Reportar</a>
         </p> 
 
             

@@ -20,8 +20,10 @@ namespace CadeMeuPet.Controllers
         #endregion
 
         #region Pag Cadastrar Denúncia
-        public ActionResult CadastrarDenuncia()
+        public ActionResult CadastrarDenuncia(int id)
         {
+            Animal animal = AnimalDAO.BuscarById(id);
+            TempData["AnimalId"] = animal.AnimalId;
             return View();
         }
         #endregion
@@ -30,11 +32,16 @@ namespace CadeMeuPet.Controllers
         [HttpPost]
         public ActionResult CadastrarDenuncia(Denuncia denuncia)
         {
+            denuncia.AnimalId = Convert.ToInt32(TempData["AnimalId"]);
             denuncia.DataDenuncia = DateTime.Now;
             if (ModelState.IsValid)
             {
-                DenunciaDAO.CadastrarDenuncia(denuncia);
-                return RedirectToAction("Index", "Animal");
+                if(denuncia.AnimalId != 0)
+                {
+                    DenunciaDAO.CadastrarDenuncia(denuncia);
+                    return RedirectToAction("DetalhesAnimal", "Home", new { id = denuncia.AnimalId });
+                }
+                ModelState.AddModelError("", "Não foi possível enviar a denuncia, volte para página inicial e tente novamente!");
             }
             return View(denuncia);
         }
