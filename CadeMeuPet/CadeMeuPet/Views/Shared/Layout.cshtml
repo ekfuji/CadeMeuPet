@@ -22,13 +22,18 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav" style="margin-right: 20px">
                 <li class="dropdown" style="margin-left: 10px; margin-right: 15px">
-                    <a href="javascript:void(0)" class="dropbtn" style="text-decoration: none;">Gerenciar website</a>
-                    <div class="dropdown-content">
-                        @Html.ActionLink("Gerenciar Tipo", "Index", "Tipo", null, new { @class = "nav-link" })
-                        @Html.ActionLink("Gerenciar Porte", "Index", "Porte", null, new { @class = "nav-link" })
-                        <div class="dropdown-divider"></div>
-                        @Html.ActionLink("Denúncias", "Index", "Denuncia", null, new { @class = "nav-link" })
-                    </div>
+                    @if (Request.IsAuthenticated)
+                  {
+                <a href="javascript:void(0)" class="dropbtn" style="text-decoration: none;">Gerenciar website</a>
+
+                <div class="dropdown-content">
+                    @Html.ActionLink("Gerenciar Tipo", "Index", "Tipo", null, new { @class = "nav-link" })
+                    @Html.ActionLink("Gerenciar Porte", "Index", "Porte", null, new { @class = "nav-link" })
+                    <div class="dropdown-divider"></div>
+                    @Html.ActionLink("Denúncias", "Index", "Denuncia", null, new { @class = "nav-link" })
+                </div>
+                   }
+
                 </li>
                     <li class="dropdown" style="margin-left: 10px;">
                         <a href="javascript:void(0)" class="dropbtn" style="text-decoration: none;">Gerenciar postagem</a>
@@ -36,6 +41,7 @@
                             @Html.ActionLink("Cadastrar Animal", "CadastrarEndereco", "Endereco", null, new { @class = "nav-link" })
                             <div class="dropdown-divider"></div>
                             @Html.ActionLink("Mensagens", "Index", "Comentario", null, new { @class = "nav-link" })
+                            @Html.ActionLink("Ver Suas Postagens", "ListaAnimaisUsuario", "Home", null, new { @class = "nav-link" })
                         </div>
 
             </ul>

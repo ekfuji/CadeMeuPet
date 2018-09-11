@@ -11,19 +11,21 @@
             <th scope="col">Nome</th>
             <th scope="col">Data Postagem</th>
             <th scope="col">Ver Postagem</th>
-            <th scope="col">Editar</th>
+            <th scope="col">Editar dados do Animal</th>
+            <th scope="col">Editar dados do Endereço</th>
         </tr>
         @if (Model != null)
         {
             foreach (Animal animal in Model)
             {
-                <tr class="table-primary">
-                    <td><img src="~/Images/@animal.Imagem" style="width: 100px; height: 100px"/></td>
-                    <td>@animal.NomeAnimal</td>
-                    <td>@animal.DataCadastro</td>
-                    <td>@Html.ActionLink("Ver Postagem", "DetalhesAnimal", "Home", new { id = animal.AnimalId }, new { @class = "btn btn-primary" })</td>
-                    <td>@Html.ActionLink("Editar Animal", "AlterarAnimal", "Home", new { id = animal.AnimalId }, new { @class = "btn btn-primary" })</td>
-                </tr>
+        <tr class="table-primary">
+            <td><img src="~/Images/@animal.Imagem" style="width: 100px; height: 100px" /></td>
+            <td>@animal.NomeAnimal</td>
+            <td>@animal.DataCadastro</td>
+            <td>@Html.ActionLink("Ver Postagem", "DetalhesAnimal", "Home", new { id = animal.AnimalId }, new { @class = "btn btn-primary" })</td>
+            <td>@Html.ActionLink("Editar Animal", "AlterarAnimal", "Home", new { id = animal.AnimalId }, new { @class = "btn btn-primary" })</td>
+            <td>@Html.ActionLink("Editar Animal", "AlterarEndereco", "Endereco", new { id = animal.EnderecoId }, new { @class = "btn btn-primary" })</td>
+        </tr>
             }
         }
   
