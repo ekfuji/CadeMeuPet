@@ -11,19 +11,27 @@
             <th scope="col">Email</th>
             <th scope="col">Data da mensagem</th>
             <th scope="col">Conteúdo da mensagem</th>
+            <th scope="col">Dados do Animal</th>
             <th scope="col">Remover</th>
         </tr>
-
-        @foreach (Comentario comentarios in Model)
+        @if (Model != null)
         {
-            <tr class="table-primary">
-                <td>@comentarios.NomeComentario</td>
-                <td>@comentarios.EmailComentario</td>
-                <td>@comentarios.DataComentario</td>
-                <td>@comentarios.Animal</td>
-                <td>@Html.ActionLink("Remover", "RemoverTipo", "Tipo", new { id = comentarios.idComentario }, new { @class = "btn btn-primary" })</td>
-            </tr>
+            foreach (Comentario comentarios in Model)
+            {
+                if (comentarios != null)
+                {
+                <tr class="table-primary">
+                    <td>@comentarios.NomeComentario</td>
+                    <td>@comentarios.EmailComentario</td>
+                    <td>@comentarios.DataComentario</td>
+                    <td>@comentarios.Mensagem</td>
+                    <td>@comentarios.Animal.NomeAnimal</td>
+                    <td>@Html.ActionLink("Remover", "RemoverTipo", "Tipo", new { id = comentarios.idComentario }, new { @class = "btn btn-primary" })</td>
+                </tr>
+                 }
+             }
         }
+    
 
     </table>
 </div>

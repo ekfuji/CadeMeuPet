@@ -1,5 +1,9 @@
 ﻿body {
     background-image: url("img/background.png");
+    width:100%;
+    margin:auto;
+    min-width:600px;
+    max-width:2000px;
 
 }
 
@@ -16,7 +20,7 @@
 }
 .row {
     overflow: hidden;
-    margin: 8px 72px 8px 10px;
+    margin: 8px 3% 8px 2%;
     overflow: hidden;
 
 }

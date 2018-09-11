@@ -41,6 +41,21 @@ namespace CadeMeuPet.DAL
         }
         #endregion
 
+        public static List<Comentario> BuscarComentarioByUser(int id)
+        {
+            List<Animal> ListaAnimais = ctx.Animais.Where(x => x.UsuarioId == id).ToList();
+            List<Comentario> comentario = new List<Comentario>();
+          
+            foreach (Animal Animal in ListaAnimais)
+            {
+                
+             
+               comentario.Add(ctx.Comentarios.Include("Animal").FirstOrDefault(x => x.AnimalId == Animal.AnimalId));
+            }
+          
+            return comentario.ToList();
+        }
+
         #region Buscar Comentários Pelo Nome da pessoa que comentou
         public static List<Comentario> BuscarByName(Comentario comentario)
         {

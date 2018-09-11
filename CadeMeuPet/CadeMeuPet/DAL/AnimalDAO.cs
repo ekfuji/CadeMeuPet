@@ -42,13 +42,6 @@ namespace CadeMeuPet.DAL
         }
         #endregion
 
-        #region Buscar Animais Pelo Usuário 
-        public static List<Animal> BuscarByUser(Animal animal)
-        {
-            return ctx.Animais.Where(x => x.NomeAnimal.Equals(animal.NomeAnimal) && x.Caracteristicas.Equals(animal.Caracteristicas)).ToList();
-        }
-        #endregion
-
         #region Buscar Animais Pelo Nome, Características 
         public static Animal BuscarByNameCaracter(Animal animal)
         {
@@ -77,7 +70,7 @@ namespace CadeMeuPet.DAL
         #region Alterar Animal
         public static bool AlterarAnimal(Animal animal)
         {
-            if (ctx.Animais.FirstOrDefault(x =>  x.AnimalId != animal.AnimalId) == null)
+            if (ctx.Animais.FirstOrDefault(x =>  x.AnimalId != animal.AnimalId) != null)
             {
                 ctx.Entry(animal).State = EntityState.Modified;
                 ctx.SaveChanges();

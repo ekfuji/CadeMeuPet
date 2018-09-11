@@ -55,12 +55,12 @@ button:hover {
 /* The Modal (background) */
 .modal {
     color: #888888;
-    position: fixed;
+    position: absolute;
     padding: 14px 20px;
     margin: 20px 27%;
     z-index: 1;
-    left: 0;
-    top: 0;
+    top:10%;
+    left:10%;
     width: 550px;
     height: 575px;
     border-radius: 10px;

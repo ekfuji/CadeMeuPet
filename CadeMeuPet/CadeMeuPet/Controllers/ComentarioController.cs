@@ -10,11 +10,14 @@ namespace CadeMeuPet.Controllers
 {
     public class ComentarioController : Controller
     {
-        [Authorize]
+
         #region Index
+        [Authorize]
         public ActionResult Index()
         {
-            return View(ComentarioDAO.BuscarComentarios());
+            var email = User.Identity.Name;
+            Usuario usuario = UsuarioDAO.BuscarUsuarioPorEmail(email);
+            return View(ComentarioDAO.BuscarComentarioByUser(usuario.UsuarioId));
         }
         #endregion
 

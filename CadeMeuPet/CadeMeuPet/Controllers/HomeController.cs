@@ -58,8 +58,8 @@ namespace CadeMeuPet.Controllers
             ViewBag.TipoId = new SelectList(TipoDAO.BuscarTipos(), "TipoId", "Especie");
             if (User.Identity.IsAuthenticated)
             {
-                var userName = User.Identity.Name;
-                Usuario usuario = UsuarioDAO.BuscarUsuarioPorEmail(userName);
+                var email = User.Identity.Name;
+                Usuario usuario = UsuarioDAO.BuscarUsuarioPorEmail(email);
                 animal.Situacao = 0;
                 animal.UsuarioId = usuario.UsuarioId;
 
@@ -107,14 +107,20 @@ namespace CadeMeuPet.Controllers
         [Authorize]
         public ActionResult AlterarAnimal(int id)
         {
+            ViewBag.PorteId = new SelectList(PorteDAO.BuscarPortes(), "PorteId", "Tamanho");
+            ViewBag.TipoId = new SelectList(TipoDAO.BuscarTipos(), "TipoId", "Especie");
             return View(AnimalDAO.BuscarById(id));
         }
         #endregion
 
         #region Alterar Animal
+        [Authorize]
+        [HttpPost]
         public ActionResult AlterarAnimal(Animal animalAlterado ,HttpPostedFileBase fupImagem)
         {
-            
+            ViewBag.PorteId = new SelectList(PorteDAO.BuscarPortes(), "PorteId", "Tamanho");
+            ViewBag.TipoId = new SelectList(TipoDAO.BuscarTipos(), "TipoId", "Especie");
+
             Animal animalAntigo = AnimalDAO.BuscarById(animalAlterado.AnimalId);
             animalAntigo.NomeAnimal = animalAlterado.NomeAnimal;
             animalAntigo.PorteId = animalAlterado.PorteId;
@@ -139,7 +145,7 @@ namespace CadeMeuPet.Controllers
 
                 if (AnimalDAO.AlterarAnimal(animalAntigo))
                 {
-                    return RedirectToAction("DetalhesAnimal", "Home");
+                    return RedirectToAction("DetalhesAnimal", "Home", new { id = animalAlterado.AnimalId});
                 }
                 else
                 {
@@ -154,5 +160,16 @@ namespace CadeMeuPet.Controllers
             }
         }
         #endregion
+
+        #region Pag de Administração dos Animais pelo Usuário
+        [Authorize]
+        public ActionResult ListaAnimaisUsuario()
+        {
+            var email = User.Identity.Name;
+            Usuario usuario = UsuarioDAO.BuscarUsuarioPorEmail(email);
+            return View(UsuarioDAO.BuscarAnimaByIdUsuario(usuario.UsuarioId));
+        }
+        #endregion
+
     }
 }

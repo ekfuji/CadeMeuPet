@@ -30,7 +30,6 @@
                         @Html.ActionLink("Denúncias", "Index", "Denuncia", null, new { @class = "nav-link" })
                     </div>
                 </li>
-                <ul class="navbar-nav">
                     <li class="dropdown" style="margin-left: 10px;">
                         <a href="javascript:void(0)" class="dropbtn" style="text-decoration: none;">Gerenciar postagem</a>
                         <div class="dropdown-content">
@@ -38,7 +37,7 @@
                             <div class="dropdown-divider"></div>
                             @Html.ActionLink("Mensagens", "Index", "Comentario", null, new { @class = "nav-link" })
                         </div>
-                </ul>
+
             </ul>
         </div>
         @if (!Request.IsAuthenticated)

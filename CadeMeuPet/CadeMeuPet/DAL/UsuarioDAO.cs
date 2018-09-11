@@ -47,7 +47,6 @@ namespace CadeMeuPet.DAL
         }
         #endregion
 
-
         #region LISTAR USUARIOS
 
         public static List<Usuario> ListarUsuarios()
@@ -105,6 +104,13 @@ namespace CadeMeuPet.DAL
         }
 
 
+        #endregion
+
+        #region Buscar Animais Pelo id do Usuário
+        public static List<Animal> BuscarAnimaByIdUsuario(int id)
+        {
+            return ctx.Animais.Where(x => x.UsuarioId == id).ToList();
+        }
         #endregion
 
 
