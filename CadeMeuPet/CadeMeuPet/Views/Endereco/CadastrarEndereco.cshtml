@@ -36,16 +36,6 @@
 
 
 
-                @Html.LabelFor(Model => Model.CEP, null, new { @style = "color: #000000" })
-                @Html.ValidationMessageFor(Model => Model.CEP, null, new { @class = "text-danger" })<br />
-                @Html.TextBoxFor(Model => Model.CEP,
-                        new
-                        {
-                            @class = "form-control",
-                            @placeholder = "00000-000"
-
-                        })<br />
-
                 @Html.EditorFor(model => model.Ip, new { htmlAttributes = new { @class = "esconde" } })
 
 

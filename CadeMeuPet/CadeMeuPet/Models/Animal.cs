@@ -36,7 +36,7 @@ namespace CadeMeuPet.Models
         public byte Situacao { get; set; } 
 
         [Required(ErrorMessage = "o Porte é obrigatório")]
-        [Display(Name = "Tamnho")]
+        [Display(Name = "Tamanho")]
         public int PorteId { get; set; }
 
         public virtual Porte Porte { get; set; }

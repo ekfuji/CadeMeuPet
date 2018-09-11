@@ -64,16 +64,16 @@ namespace CadeMeuPet.DAL
             return ctx.Enderecos.Where(c => c.Latitude.Trim().Contains(local.Trim()));
         }
 
-        #region BUSCAR ENDEREÇO BY CEP
+        //#region BUSCAR ENDEREÇO BY CEP
 
-        public static Endereco BuscarEnderecoByCEP(string CEP)
-        {
-            return ctx.Enderecos.FirstOrDefault(e => e.CEP.Equals(CEP));
-        }
+        //public static Endereco BuscarEnderecoByCEP(string CEP)
+        //{
+        //    return ctx.Enderecos.FirstOrDefault(e => e.CEP.Equals(CEP));
+        //}
 
 
 
-        #endregion
+        //#endregion
 
         #region EXCLUIR ENDEREÇO
 

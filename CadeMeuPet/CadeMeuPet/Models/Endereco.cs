@@ -18,11 +18,6 @@ namespace CadeMeuPet.Models
         [Display(Name = "Endereço")]
         public string Logradouro { get; set; }
 
-        [Column(TypeName = "VARCHAR")]
-        [MaxLength(8, ErrorMessage = "O CEP deve ter no máximo 8 caracteres!")]
-        [Display(Name = "CEP")]
-        public string CEP { get; set; }
-
         [Display(Name = "Latitude")]
         [Column(TypeName = "VARCHAR")]
         public string Latitude { get; set; }

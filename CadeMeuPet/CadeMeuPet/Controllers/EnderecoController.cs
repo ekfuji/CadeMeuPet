@@ -69,7 +69,6 @@ namespace CadeMeuPet.Controllers
         {
             Endereco original = EnderecoDAO.BuscarEnderecoById(endereco.EnderecoId);
             original.Logradouro = endereco.Logradouro;
-            original.CEP = endereco.CEP;
             original.Latitude = endereco.Latitude;
             original.Longitude = endereco.Longitude;
             original.Ip = endereco.Ip;

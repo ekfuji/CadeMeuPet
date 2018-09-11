@@ -10,7 +10,6 @@
     <table class="table table-hover">
         <tr class="table-secondary">
             <th scope="col">Logradouro</th>
-            <th scope="col">CEP</th>
             <th scope="col">Editar</th>
             <th scope="col">Remover</th>
         </tr>
@@ -19,7 +18,6 @@
         {
             <tr class="table-primary">
                 <td>@endereco.Logradouro</td>
-                <td>@endereco.CEP</td>
                 <td>@Html.ActionLink("Alterar", "AlterarEndereco", "Endereco", new {id = endereco.EnderecoId}, new {@class = "btn btn-primary"})</td>
                 <td>@Html.ActionLink("Remover", "RemoverEndereco", "Endereco", new {id = endereco.EnderecoId}, new {@class = "btn btn-primary"})</td>
             </tr>

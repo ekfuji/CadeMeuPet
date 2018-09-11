@@ -232,6 +232,10 @@
     <Compile Include="Migrations\201809090517358_AlterTableEndereco.Designer.cs">
       <DependentUpon>201809090517358_AlterTableEndereco.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809111130152_NoCEP.cs" />
+    <Compile Include="Migrations\201809111130152_NoCEP.Designer.cs">
+      <DependentUpon>201809111130152_NoCEP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Animal.cs" />
     <Compile Include="Models\Comentario.cs" />
@@ -299,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809090517358_AlterTableEndereco.resx">
       <DependentUpon>201809090517358_AlterTableEndereco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809111130152_NoCEP.resx">
+      <DependentUpon>201809111130152_NoCEP.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
