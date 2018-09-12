@@ -39,7 +39,8 @@
 
                 })<br/>
             @Html.ValidationMessageFor(Model => Model.Password, null, new { @class = "text-danger" })<br />
-                    
+
+
             @Html.ValidationSummary(true, null,
                 new { @class = "text-danger" })
             <button type="submit">Login</button>
@@ -64,3 +65,11 @@
 }
     </body>
 
+<script>
+
+    $(document).ready(function () {
+       var headline =  $('IsAdmin').val();
+        alert(headline);
+    });
+   
+</script>
