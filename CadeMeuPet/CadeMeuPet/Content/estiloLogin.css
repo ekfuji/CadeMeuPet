@@ -99,3 +99,28 @@ button:hover {
     to {transform: scale(1)}
 }
 
+.jumbotron {
+    background-color: #C0C0C0;
+    position: relative;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 400px;
+    height: 90%;   
+    margin: 2% auto 4% auto;
+    border-radius: 30px;
+    
+}
+
+.card.mb-3 {
+    left: 0;
+    text-align: center;
+    align-items: center;
+    width: 85%;
+    height: 470px; 
+    overflow: hidden;
+    margin: 2% auto 4% auto;
+    padding: 13px;
+    
+                
+}
