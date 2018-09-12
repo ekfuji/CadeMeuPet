@@ -26,13 +26,6 @@ namespace CadeMeuPet.Models
         [Column(TypeName = "VARCHAR")]
         public string Longitude { get; set; }
 
-        [Display(Name = "IP")]
-        [Column(TypeName = "VARCHAR")]
-        public String Ip { get; set; }
-
-        [Display(Name = "Navegador")]
-        [Column(TypeName = "VARCHAR")]
-        public String Navegador { get; set; }
 
 
     }

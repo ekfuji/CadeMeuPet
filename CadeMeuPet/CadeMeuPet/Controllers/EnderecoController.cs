@@ -28,9 +28,9 @@ namespace CadeMeuPet.Controllers
         #endregion
 
         #region VIEW PAGINA ALTERAR ENDERECO
-        public ActionResult AlterarEndereco()
+        public ActionResult AlterarEndereco(int id)
         {
-            return View();
+            return View(EnderecoDAO.BuscarEnderecoById(id));
         }
         #endregion
 
@@ -71,13 +71,12 @@ namespace CadeMeuPet.Controllers
             original.Logradouro = endereco.Logradouro;
             original.Latitude = endereco.Latitude;
             original.Longitude = endereco.Longitude;
-            original.Ip = endereco.Ip;
-            original.Navegador = endereco.Navegador;
+
 
             if (ModelState.IsValid)
             {
                 EnderecoDAO.AlterarEndereco(original);
-                return RedirectToAction("Index", "Endereco");
+                return RedirectToAction("DetalhesAnimal", "Home", new { id = original.EnderecoId });
             }
 
             return View(endereco);

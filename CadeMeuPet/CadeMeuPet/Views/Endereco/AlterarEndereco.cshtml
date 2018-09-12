@@ -1,60 +1,117 @@
-﻿@using CadeMeuPet.Models
+﻿@using System.Web.Optimization
+@using CadeMeuPet.Models
 @model Endereco
 @{
     ViewBag.Title = "AlterarEndereco";
-   
+
+
 }
 
-<div class="col-sm-4">
-    @using (Html.BeginForm("AlterarEndereco", "Endereco", FormMethod.Post, new { @class = "form-group", enctype = "multipart/form-data" }))
-    {
-        @Html.AntiForgeryToken()
-        @Html.ValidationSummary(true, null, new { @class = "text-danger" })
-        <br />
-        <fieldset>
-            <div class="jumbotron">
-                    <p>Alterar Endereço</p>
-                @Html.HiddenFor(Model => Model.EnderecoId)
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:600" type="text/css" rel="stylesheet" />
+<link href="~/GoogleMaps/estilo.css" type="text/css" rel="stylesheet" />
 
+
+@using (Html.BeginForm("AlterarEndereco", "Endereco", FormMethod.Post, new { @class = "form-group", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+    <fieldset>
+
+        <div class="jumbotron">
+            <div class="form-horizontal">
+
+                <h3>Qual foi a ultima localização do seu Bichinho?</h3>
+
+                <br />
+                 @Html.HiddenFor(Model => Model.EnderecoId)
                 @Html.LabelFor(Model => Model.Logradouro, null, new { @style = "color: #000000" })
                 @Html.ValidationMessageFor(Model => Model.Logradouro, null, new { @class = "text-danger" })<br />
                 @Html.TextBoxFor(Model => Model.Logradouro,
-                new
-                {
-                    @class = "form-control",
-                    @placeholder = "Rua, Av ..."
+                        new
+                        {
+                            @class = "form-control",
+                            @placeholder = "Digite aqui a última localização do animal. Ex : Rua, Av ..."
 
-                })<br />
+                        })<br />
 
 
-                @Html.LabelFor(Model => Model.Latitude, null, new { @style = "color: #000000" })
-                @Html.ValidationMessageFor(Model => Model.Latitude, null, new { @class = "text-danger" })<br />
-                @Html.TextBoxFor(Model => Model.Latitude,
-                    new
-                    {
-                        @class = "form-control",
-                        @placeholder = "Latitude"
 
-                    })<br />
+                @Html.EditorFor(model => model.Latitude, new { htmlAttributes = new { @class = "esconde" } })
 
-                @Html.LabelFor(Model => Model.Longitude, null, new { @style = "color: #000000" })
-                @Html.ValidationMessageFor(Model => Model.Longitude, null, new { @class = "text-danger" })<br />
-                @Html.TextBoxFor(Model => Model.Longitude,
-                    new
-                    {
-                        @class = "form-control",
-                        @placeholder = "Latitude"
 
-                    })<br />
+                @Html.EditorFor(model => model.Longitude, new { htmlAttributes = new { @class = "esconde" } })
 
-                <input type="submit" value="Concluir" class="btn btn-success" />
+
+                <div class="form-group col-lg-6">
+
+                    <div class="campos">
+                        <label for="mapa">Mapa:</label>
+
+                    </div>
+                    <div id="mapa"></div>
+
+                    <input type="hidden" id="txtLatitude" name="txtLatitude" value="@Model.Latitude"/>
+                    <input type="hidden" id="txtLongitude" name="txtLongitude" value="@Model.Longitude" />
+
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Prosseguir com o cadastro" class="btn btn-success" />
+                        @*<a href="@Url.Action("Index", "Endereco")" class="btn btn-danger">Voltar</a>*@
+                    </div>
+                </div>
 
             </div>
-        </fieldset>
 
-    }
-</div>
 
+        </div>
+
+
+
+
+
+    </fieldset>
+
+}
+
+
+
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+<script>
+        var geocoder;
+        var map;
+        var marker;
+        var lat = $("#txtLatitude").val();
+        var long = $("#txtLongitude").val();
+
+        function initialize() {
+            var latlng = new google.maps.LatLng(lat, long);
+            var options = {
+                zoom: 15,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            map = new google.maps.Map(document.getElementById("mapa"), options);
+
+            geocoder = new google.maps.Geocoder();
+
+            marker = new google.maps.Marker({
+                map: map,
+                draggable: true,
+            });
+
+            marker.setPosition(latlng);
+        }
+</script>
+<script type="text/javascript" src="~/GoogleMaps/mapa.js"></script>
 
 
 

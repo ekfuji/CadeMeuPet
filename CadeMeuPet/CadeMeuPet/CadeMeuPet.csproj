@@ -236,6 +236,10 @@
     <Compile Include="Migrations\201809111130152_NoCEP.Designer.cs">
       <DependentUpon>201809111130152_NoCEP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809120220311_RemoveIP_Navegador.cs" />
+    <Compile Include="Migrations\201809120220311_RemoveIP_Navegador.Designer.cs">
+      <DependentUpon>201809120220311_RemoveIP_Navegador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Animal.cs" />
     <Compile Include="Models\Comentario.cs" />
@@ -307,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809111130152_NoCEP.resx">
       <DependentUpon>201809111130152_NoCEP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809120220311_RemoveIP_Navegador.resx">
+      <DependentUpon>201809120220311_RemoveIP_Navegador.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
