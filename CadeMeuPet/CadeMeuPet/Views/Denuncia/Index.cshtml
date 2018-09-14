@@ -12,6 +12,8 @@
             <th scope="col">Animal Id</th>
             <th scope="col">Postagem</th>
             <th scope="col">Remover</th>
+            <th scope="col">Bloquear Postagem</th>
+            <th scope="col">desbloquear Postagem</th>
         </tr>
 
         @foreach (Denuncia denuncias in Model)
@@ -22,6 +24,8 @@
                 <td>@denuncias.AnimalId</td>
                 <td>@Html.ActionLink("Ver Postagem", "DetalhesAnimal", "Home", new { id = denuncias.AnimalId }, new { @class = "btn btn-primary" })</td>
                 <td>@Html.ActionLink("Remover", "RemoverTipo", "Tipo", new { id = denuncias.DenunciaId}, new { @class = "btn btn-primary" })</td>
+                <td>@Html.ActionLink("Bloquear","AnimalEncontrado","Home", new { id = denuncias.AnimalId}, new { @class ="btn btn-primary"})</td>
+                <td>@Html.ActionLink("Desbloquear","DesbloquearAnimal","Home", new { id = denuncias.AnimalId}, new { @class = "btn btn-primary"})</td>
             </tr>
         }
 

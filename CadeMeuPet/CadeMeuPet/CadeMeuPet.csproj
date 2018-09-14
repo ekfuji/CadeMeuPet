@@ -26,6 +26,7 @@
     </NuGetPackageImportStamp>
     <ApplicationInsightsResourceId>/subscriptions/d1c2f538-3472-4d55-9b2a-c7250184a669/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/CadeMeuPet</ApplicationInsightsResourceId>
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -244,6 +245,10 @@
     <Compile Include="Migrations\201809141248440_IsAdminToString.Designer.cs">
       <DependentUpon>201809141248440_IsAdminToString.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809142105106_NotRequiredIsAdmin.cs" />
+    <Compile Include="Migrations\201809142105106_NotRequiredIsAdmin.Designer.cs">
+      <DependentUpon>201809142105106_NotRequiredIsAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Animal.cs" />
     <Compile Include="Models\Comentario.cs" />
@@ -287,6 +292,7 @@
     <Content Include="Views\Home\DetalhesAnimal.cshtml" />
     <Content Include="Views\Home\AlterarAnimal.cshtml" />
     <Content Include="Views\Home\ListaAnimaisUsuario.cshtml" />
+    <Content Include="Views\Denuncia\AnimalBloqueado.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -322,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809141248440_IsAdminToString.resx">
       <DependentUpon>201809141248440_IsAdminToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809142105106_NotRequiredIsAdmin.resx">
+      <DependentUpon>201809142105106_NotRequiredIsAdmin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

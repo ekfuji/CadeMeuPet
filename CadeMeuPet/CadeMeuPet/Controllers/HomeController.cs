@@ -22,7 +22,7 @@ namespace CadeMeuPet.Controllers
         #endregion
 
         #region DetalhesAnimal
-        [Authorize(Roles = "Usuario")]
+        [Authorize(Roles = "Usuario, Admin")]
         public ActionResult DetalhesAnimal(int id)
         {
             if (id == 0)
@@ -172,6 +172,45 @@ namespace CadeMeuPet.Controllers
             var email = User.Identity.Name;
             Usuario usuario = UsuarioDAO.BuscarUsuarioPorEmail(email);
             return View(UsuarioDAO.BuscarAnimaByIdUsuario(usuario.UsuarioId));
+        }
+        #endregion
+
+        #region Animal Encontrado (Bloquear Animal)
+        [Authorize(Roles ="Usuario, Admin")]
+        public ActionResult AnimalEncontrado(int id)
+        {
+            Animal animal = AnimalDAO.BuscarById(id);
+            if(animal != null)
+            {
+                animal.Situacao = 1;
+                if (AnimalDAO.AlterarAnimal(animal))
+                {
+                    return RedirectToAction("Index","Home");
+                }
+            }
+            return RedirectToAction("Index","Home");
+        }
+        #endregion
+
+
+
+//        Resolvido Bug com o Cadastrar Usuário(problema com o IsAdmin Required) +
+//Botão bloquear e desbloquear feito na denuncia e adicionado no Ver Postagens Postagens
+
+        #region Desbloquear Postagem (Animal)
+        [Authorize(Roles ="Admin")]
+        public ActionResult DesbloquearAnimal(int id)
+        {
+            Animal animal = AnimalDAO.BuscarById(id);
+            if (animal != null)
+            {
+                animal.Situacao = 0;
+                if (AnimalDAO.AlterarAnimal(animal))
+                {
+                    return RedirectToAction("Index", "Denuncia");
+                }
+            }
+            return RedirectToAction("Index", "Home");
         }
         #endregion
 

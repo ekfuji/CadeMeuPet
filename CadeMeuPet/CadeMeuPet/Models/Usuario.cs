@@ -42,7 +42,7 @@ namespace CadeMeuPet.Models
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "O campo Permissão é obrigatório")]
+
         [Display(Name = "Permissão de usuário")]
         public string IsAdmin { get; set; }
 

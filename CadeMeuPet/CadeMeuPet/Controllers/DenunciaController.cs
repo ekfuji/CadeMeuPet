@@ -59,5 +59,14 @@ namespace CadeMeuPet.Controllers
             return RedirectToAction("Index","Denuncia");
         }
         #endregion
+
+        #region Pag Animais Bloqueados
+        [Authorize(Roles ="Admin")]
+        public ActionResult AnimalBloqueado()
+        {
+            return View(AnimalDAO.BuscarAnimais());
+        }
+        #endregion
+
     }
 }
