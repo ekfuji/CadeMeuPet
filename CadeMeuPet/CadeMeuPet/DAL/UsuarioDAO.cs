@@ -19,7 +19,7 @@ namespace CadeMeuPet.DAL
             {
                 if (BuscarUsuarioPorEmail(usuario.Email) == null)
                 {
-                        usuario.IsAdmin = 0;
+                        usuario.IsAdmin = "Usuario";
                         ctx.Usuarios.Add(usuario);
                         ctx.SaveChanges();
                         return true;

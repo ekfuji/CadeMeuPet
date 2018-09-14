@@ -12,11 +12,12 @@
 {
 
     <div class="jumbotron">
-
+        
         @Html.AntiForgeryToken()
-        @Html.ValidationSummary(true, null, new { @class = "text-danger" })
-        <fieldset>
+       
+        <fieldset>     
             <legend>Cadastro do Seu Pet</legend>
+           
             @Html.HiddenFor(Model => Model.AnimalId)
 
             @Html.LabelFor(Model => Model.NomeAnimal)
@@ -63,7 +64,7 @@
                     <input type="file" name="fupImagem" />
                 </div>
             </div>
-
+            <div class="form-group">@Html.ValidationSummary(true, null, new { @class = "text-danger" })</div>          
         </fieldset>
         <input type="submit" value="Alterar Postagem" class="btn btn-success" />
     </div>

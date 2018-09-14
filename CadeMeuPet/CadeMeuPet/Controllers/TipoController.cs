@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace CadeMeuPet.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class TipoController : Controller
     {
         // GET: Tipo

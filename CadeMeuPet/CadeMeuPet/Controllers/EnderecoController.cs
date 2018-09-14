@@ -8,11 +8,11 @@ using CadeMeuPet.DAL;
 
 namespace CadeMeuPet.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Usuario")]
     public class EnderecoController : Controller
     {
         #region VIEW LISTA DE ENDEREÇOS
-
+       
         public ActionResult Index()
         {
             return View(EnderecoDAO.ListarEnderecos());
@@ -76,7 +76,8 @@ namespace CadeMeuPet.Controllers
             if (ModelState.IsValid)
             {
                 EnderecoDAO.AlterarEndereco(original);
-                return RedirectToAction("DetalhesAnimal", "Home", new { id = original.EnderecoId });
+                int animalId = AnimalDAO.BuscarAnimalByEnderecoId(endereco.EnderecoId);
+                return RedirectToAction("DetalhesAnimal", "Home", new { id = animalId });
             }
 
             return View(endereco);

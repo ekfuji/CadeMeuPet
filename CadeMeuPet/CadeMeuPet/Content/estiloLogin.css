@@ -5,6 +5,8 @@
 
 /* Full-width input fields */
 
+
+
 input[type=text],input[type=password], input[type=email]  {
     width: 80%;
     padding: 12px 20px;
@@ -20,8 +22,8 @@ input[type=text],input[type=password], input[type=email]  {
     color: red;
     margin: 8px 8px 8px 10%;
 }
-label {
-    margin: 8px 8px 8px 10%;
+.label {
+   margin-right: 68%;
 }
 p {
    
@@ -106,7 +108,7 @@ button:hover {
     left: 0;
     top: 0;
     width: 400px;
-    height: 90%;   
+    height: 620px;   
     margin: 2% auto 4% auto;
     border-radius: 30px;
     
@@ -117,7 +119,7 @@ button:hover {
     text-align: center;
     align-items: center;
     width: 85%;
-    height: 470px; 
+    height: 100%; 
     overflow: hidden;
     margin: 2% auto 4% auto;
     padding: 13px;

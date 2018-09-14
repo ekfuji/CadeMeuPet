@@ -22,7 +22,7 @@ namespace CadeMeuPet.Controllers
         #endregion
 
         #region DetalhesAnimal
-
+        [Authorize(Roles = "Usuario")]
         public ActionResult DetalhesAnimal(int id)
         {
             if (id == 0)
@@ -38,7 +38,7 @@ namespace CadeMeuPet.Controllers
         #endregion
 
         #region Pag Cadastro do Animal
-        [Authorize]
+        [Authorize(Roles = "Usuario")]
         public ActionResult CadastrarAnimal(int EnderecoId)
         {
             
@@ -49,8 +49,9 @@ namespace CadeMeuPet.Controllers
             return View();
         }
         #endregion
-        
+
         #region Cadastro do Animal
+        [Authorize(Roles = "Usuario")]
         [HttpPost]
         public ActionResult CadastrarAnimal(HttpPostedFileBase fupImagem, Animal animal)
         {
@@ -104,7 +105,7 @@ namespace CadeMeuPet.Controllers
         #endregion
 
         #region Pag Alterar Animal
-        [Authorize]
+        [Authorize(Roles = "Usuario")]
         public ActionResult AlterarAnimal(int id)
         {
             ViewBag.PorteId = new SelectList(PorteDAO.BuscarPortes(), "PorteId", "Tamanho");
@@ -114,7 +115,7 @@ namespace CadeMeuPet.Controllers
         #endregion
 
         #region Alterar Animal
-        [Authorize]
+        [Authorize(Roles = "Usuario")]
         [HttpPost]
         public ActionResult AlterarAnimal(Animal animalAlterado ,HttpPostedFileBase fupImagem)
         {
@@ -154,15 +155,18 @@ namespace CadeMeuPet.Controllers
                 }
 
             }
-            else
-            {
+            else if(animalAntigo.PorteId == 0 || animalAntigo.TipoId == 0){
+                ModelState.AddModelError("", "Porte ou tipo são campos obrigatórios!");
                 return View(animalAntigo);
             }
+            
+                return View(animalAntigo);
+            
         }
         #endregion
 
         #region Pag de Administração dos Animais pelo Usuário
-        [Authorize]
+        [Authorize(Roles = "Usuario")]
         public ActionResult ListaAnimaisUsuario()
         {
             var email = User.Identity.Name;

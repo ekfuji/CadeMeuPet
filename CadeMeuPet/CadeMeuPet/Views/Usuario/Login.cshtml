@@ -20,7 +20,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(Model => Model.Email, null, new {@class = "control-label col-md-11"})
+            <div class="label">@Html.LabelFor(Model => Model.Email)</div>       
             @Html.TextBoxFor(Model => Model.Email,
                 new
                 {
@@ -28,9 +28,8 @@
                     @placeholder = "Ex: exemplo@exemplo.com"
 
                 })<br/>
-            @Html.ValidationMessageFor(Model => Model.Email, null, new {@class = "text-danger"})<br/>
-
-            @Html.LabelFor(Model => Model.Password, null, new {@class = "control-label col-md-11"})                   
+            @Html.ValidationMessageFor(Model => Model.Email)<br/>
+            <div class="label">@Html.LabelFor(Model => Model.Password)   </div>                         
             @Html.PasswordFor(Model => Model.Password,
                 new
                 {
@@ -43,10 +42,11 @@
 
             @Html.ValidationSummary(true, null,
                 new { @class = "text-danger" })
-            <button type="submit">Login</button>
-            <p class="text-center text-muted"><b>Não é registrado ainda?</b></p>
-            <p class="text-center text-muted"><a href='@Url.Action("CadastrarUsuario", "Usuario")'><strong>Cadastre-se agora!</strong></a><br/><b>É muito fácil e leva apenas 1&nbsp;minuto!</b></p>
-        </div>
+            <div class="card mb-3">
+                <button type="submit">Login</button>
+                <p class="text-center text-muted"><b>Não é registrado ainda?</b></p>
+                <p class="text-center text-muted"><a href='@Url.Action("Index", "Home")'><strong>Cadastre-se agora!</strong></a><br /><b>É muito fácil e leva apenas 1&nbsp;minuto!</b></p>
+            </div>
 
 
 
@@ -65,11 +65,3 @@
 }
     </body>
 
-<script>
-
-    $(document).ready(function () {
-       var headline =  $('IsAdmin').val();
-        alert(headline);
-    });
-   
-</script>

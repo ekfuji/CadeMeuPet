@@ -13,7 +13,7 @@ namespace CadeMeuPet.Controllers
 
         #region Index
         // GET: Denuncia
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             return View(DenunciaDAO.BuscarDenuncias());
@@ -49,6 +49,7 @@ namespace CadeMeuPet.Controllers
         #endregion
 
         #region Remover Denúncia
+        [Authorize(Roles = "Admin")]
         public ActionResult RemoverDenuncia(int id)
         {
             if(id != 0)

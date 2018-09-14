@@ -56,6 +56,15 @@ namespace CadeMeuPet.DAL
         }
         #endregion
 
+        #region Busca  Animal by id Endereço
+        public static int BuscarAnimalByEnderecoId(int id)
+        {
+            return ctx.Animais.FirstOrDefault(x => x.EnderecoId == id).AnimalId;
+        }
+
+
+        #endregion
+
         #region Remover Animal
         public static void RemoverAnima(int id)
         {
@@ -70,7 +79,7 @@ namespace CadeMeuPet.DAL
         #region Alterar Animal
         public static bool AlterarAnimal(Animal animal)
         {
-            if (ctx.Animais.FirstOrDefault(x =>  x.AnimalId != animal.AnimalId) != null)
+            if (ctx.Animais.FirstOrDefault(x =>  x.AnimalId == animal.AnimalId) != null)
             {
                 ctx.Entry(animal).State = EntityState.Modified;
                 ctx.SaveChanges();
@@ -79,6 +88,7 @@ namespace CadeMeuPet.DAL
             return false;
         }
         #endregion
+
 
     }
 }

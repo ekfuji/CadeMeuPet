@@ -60,7 +60,9 @@ namespace CadeMeuPet.Controllers
             {
                 //Autenticar
                 FormsAuthentication.SetAuthCookie(usuario.Email, true);
-                return RedirectToAction("CadastrarEndereco", "Endereco");
+                Session["Nome"] = usuario.Nome;
+                Session["IsAdmin"] = usuario.IsAdmin;
+                return RedirectToAction("Index", "Home");
             }
             ModelState.AddModelError("", "O e-mail ou senha não coincidem!");
             return View(usuario);

@@ -12,7 +12,7 @@ namespace CadeMeuPet.Controllers
     {
 
         #region Index
-        [Authorize]
+        [Authorize(Roles = "Usuario")]
         public ActionResult Index()
         {
             var email = User.Identity.Name;
@@ -50,13 +50,14 @@ namespace CadeMeuPet.Controllers
         #endregion
 
         #region Remover Comentário
+        [Authorize(Roles = "Usuario")]
         public ActionResult RemoverComentario(int id)
         {
             if (id != 0)
             {
                 ComentarioDAO.RemoverComentario(id);
             }
-            return RedirectToAction("Index", "Denuncia");
+            return RedirectToAction("Index", "Comentario");
         }
         #endregion
     }

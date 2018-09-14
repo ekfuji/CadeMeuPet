@@ -240,6 +240,10 @@
     <Compile Include="Migrations\201809120220311_RemoveIP_Navegador.Designer.cs">
       <DependentUpon>201809120220311_RemoveIP_Navegador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809141248440_IsAdminToString.cs" />
+    <Compile Include="Migrations\201809141248440_IsAdminToString.Designer.cs">
+      <DependentUpon>201809141248440_IsAdminToString.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Animal.cs" />
     <Compile Include="Models\Comentario.cs" />
@@ -247,6 +251,7 @@
     <Compile Include="Models\Denuncia.cs" />
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Porte.cs" />
+    <Compile Include="Models\Roles.cs" />
     <Compile Include="Models\Tipo.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -314,6 +319,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809120220311_RemoveIP_Navegador.resx">
       <DependentUpon>201809120220311_RemoveIP_Navegador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809141248440_IsAdminToString.resx">
+      <DependentUpon>201809141248440_IsAdminToString.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

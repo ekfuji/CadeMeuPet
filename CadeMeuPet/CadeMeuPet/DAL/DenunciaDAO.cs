@@ -33,6 +33,7 @@ namespace CadeMeuPet.DAL
         #endregion
 
         #region Remover Denúncia
+
         public static void RemoverDenuncia(int id)
         {
            Denuncia denuncia = BuscarById(id);
