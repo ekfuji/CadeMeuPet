@@ -26,8 +26,8 @@
                     <td>@animal.NomeAnimal</td>
                     <td>@animal.DataCadastro</td>
                     <td>@Html.ActionLink("Ver Postagem", "DetalhesAnimal", "Home", new { id = animal.AnimalId }, new { @class = "btn btn-primary" })</td>
-                    <td>@Html.ActionLink("Desbloquear", "AnimalEncontrado", "Home", new { id = animal.AnimalId }, new { @class = "btn btn-primary" })</td>
-                    <td>@Html.ActionLink("Bloquear", "BloquearAnimal", "Home", new { id = animal.AnimalId }, new { @class = "btn btn-primary" })</td>
+                    <td>@Html.ActionLink("Desbloquear", "DesbloquearAnimal", "Home", new { id = animal.AnimalId }, new { @class = "btn btn-primary" })</td>
+                    <td>@Html.ActionLink("Bloquear", "AnimalEncontrado", "Home", new { id = animal.AnimalId }, new { @class = "btn btn-primary" })</td>
                     <td class="text-danger">Bloqueado</td>
                 </tr>
              }

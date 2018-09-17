@@ -207,10 +207,10 @@ namespace CadeMeuPet.Controllers
                 animal.Situacao = 0;
                 if (AnimalDAO.AlterarAnimal(animal))
                 {
-                    return RedirectToAction("Index", "Denuncia");
+                    return RedirectToAction("AnimalBloqueado", "Denuncia");
                 }
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("AnimalBloqueado", "Denuncia");
         }
         #endregion
 

@@ -4,7 +4,7 @@
     ViewBag.Title = "ListaAnimaisUsuario";
 }
 
-<div class="jumbotron" style="width: 1000px">
+<div class="jumbotron" style="width: 1500px">
     <table class="table table-hover">
         <tr class="table-secondary">
             <th scope="col">Foto</th>
@@ -13,6 +13,7 @@
             <th scope="col">Ver Postagem</th>
             <th scope="col">Editar dados do Animal</th>
             <th scope="col">Editar dados do Endereço</th>
+            <th scope="col">Achei meu pet</th>
             <th scope="col">Status da Postagem</th>
         </tr>
         @if (Model != null)
@@ -26,12 +27,15 @@
                     <td>@Html.ActionLink("Ver Postagem", "DetalhesAnimal", "Home", new { id = animal.AnimalId }, new { @class = "btn btn-primary" })</td>
                     <td>@Html.ActionLink("Editar Animal", "AlterarAnimal", "Home", new { id = animal.AnimalId }, new { @class = "btn btn-primary" })</td>
                     <td>@Html.ActionLink("Editar Animal", "AlterarEndereco", "Endereco", new { id = animal.EnderecoId }, new { @class = "btn btn-primary" })</td>
-                    <td>@Html.ActionLink("Achei meu Pet", "DesbloquearAnimal", "Home", new { id = animal.AnimalId }, new { @class = "btn btn-primary" })</td>
+                    <td>@Html.ActionLink("Bloquear Publicação", "DesbloquearAnimal", "Home", new { id = animal.AnimalId }, new { @class = "btn btn-primary" })</td>
                     @if (animal.Situacao == 1)
                     {
                         <td class="text-danger">Bloqueado</td>
                     }
-                    <td class="text-success">Desbloqueado</td>
+                    else
+                    {
+                        <td class="text-success">Desbloqueado</td>
+                    }
                 </tr>
             }
         }
