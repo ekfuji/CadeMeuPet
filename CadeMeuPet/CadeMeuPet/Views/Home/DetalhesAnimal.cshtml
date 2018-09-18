@@ -10,6 +10,10 @@
 <div class="jumbotron" style="width: 950px; height: 620px;">
 
     <div id="card" class="card" style="float: left; margin-top: -20px; margin-right: 30px; height: 500px; ">
+        @if (Model.Situacao == 1)
+        {
+            <span class="badge badge-danger" style="width:70px">Bloqueado</span>
+        }
         <span class="badge badge-primary" style="width:70px; margin-right: 180px;">@Html.DisplayFor(model => model.DataCadastro)</span> 
         <h2>@Html.DisplayFor(model => model.NomeAnimal)</h2>
         <img src="~/Images/@Model.Imagem" style="width: 200px; height: 200px; align-self: center"/><br/>

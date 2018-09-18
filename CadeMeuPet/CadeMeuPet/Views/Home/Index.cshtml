@@ -2,13 +2,20 @@
 @model List<Animal>
 
 @{
-
+    List<Tipo> listarTipo = ViewBag.Tipo;
 }
 
 @*<div class="btn-group btn-group-toggle" data-toggle="buttons">
 
     </div>*@
 
+
+<div>
+    @foreach (Tipo tipos in listarTipo)
+    {
+        @Html.ActionLink(tipos.Especie, "Index", "Home", new { id = tipos.TipoId }, new { @class = "btn btn-secondary", @style = "display: inline" })
+    }
+</div>
 <div class="row" style="-ms-grid-column-align: center;">
     @if (Model != null)
     {

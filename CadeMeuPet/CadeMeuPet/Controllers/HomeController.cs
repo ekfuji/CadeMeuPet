@@ -15,14 +15,24 @@ namespace CadeMeuPet.Controllers
     {
         
         #region Index
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
-            return View(AnimalDAO.BuscarAnimais());
+            ViewBag.Tipo = TipoDAO.BuscarTipos();
+            if(id == null)
+            {
+                return View(AnimalDAO.BuscarAnimais());
+            }
+            var tipo = AnimalDAO.BuscarAnimalByTipo(id);
+            if(tipo.Count.Equals(0))
+            {
+                return View(tipo);
+            }
+            return View(tipo);
         }
         #endregion
 
         #region DetalhesAnimal
-        [Authorize(Roles = "Usuario, Admin")]
+    
         public ActionResult DetalhesAnimal(int id)
         {
             if (id == 0)

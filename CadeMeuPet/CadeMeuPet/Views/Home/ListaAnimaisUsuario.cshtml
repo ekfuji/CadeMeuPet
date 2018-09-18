@@ -27,7 +27,7 @@
                     <td>@Html.ActionLink("Ver Postagem", "DetalhesAnimal", "Home", new { id = animal.AnimalId }, new { @class = "btn btn-primary" })</td>
                     <td>@Html.ActionLink("Editar Animal", "AlterarAnimal", "Home", new { id = animal.AnimalId }, new { @class = "btn btn-primary" })</td>
                     <td>@Html.ActionLink("Editar Animal", "AlterarEndereco", "Endereco", new { id = animal.EnderecoId }, new { @class = "btn btn-primary" })</td>
-                    <td>@Html.ActionLink("Bloquear Publicação", "DesbloquearAnimal", "Home", new { id = animal.AnimalId }, new { @class = "btn btn-primary" })</td>
+                    <td>@Html.ActionLink("Bloquear Publicação", "AnimalEncontrado", "Home", new { id = animal.AnimalId }, new { @class = "btn btn-primary" })</td>
                     @if (animal.Situacao == 1)
                     {
                         <td class="text-danger">Bloqueado</td>

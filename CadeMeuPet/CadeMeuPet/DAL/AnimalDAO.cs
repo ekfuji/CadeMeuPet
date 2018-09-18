@@ -89,6 +89,13 @@ namespace CadeMeuPet.DAL
         }
         #endregion
 
+        #region Buscar by Tipo
+        public static List<Animal> BuscarAnimalByTipo(int? id)
+        {
+            return ctx.Animais.Where(x => x.TipoId == id).ToList();
+        }
+
+        #endregion
 
     }
 }
