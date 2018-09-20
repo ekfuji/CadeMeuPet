@@ -47,7 +47,16 @@ namespace CadeMeuPet.Controllers
         }
         #endregion
 
-        #region Pag Cadastro do Animal
+        #region Página WebService for Developers
+
+        public ActionResult WebServiceDesenvolvedores()
+        {
+            return View();
+        }
+
+        #endregion
+
+            #region Pag Cadastro do Animal
         [Authorize(Roles = "Usuario")]
         public ActionResult CadastrarAnimal(int EnderecoId)
         {

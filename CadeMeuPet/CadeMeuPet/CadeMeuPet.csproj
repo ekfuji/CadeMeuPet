@@ -170,9 +170,13 @@
     <Content Include="Content\estilo.css" />
     <Content Include="Content\estiloLogin.css" />
     <Content Include="Content\icofont.min.css" />
+    <Content Include="Content\img\1_imagem.jpg" />
+    <Content Include="Content\img\2_imagem.jpg" />
+    <Content Include="Content\img\3_imagem.jpg" />
     <Content Include="Content\img\background.png" />
     <Content Include="Content\img\CADEMEUPET.png" />
     <Content Include="Content\img\detalhes.png" />
+    <Content Include="Content\img\listacompleta.png" />
     <Content Include="Content\img\login.png" />
     <Content Include="Content\img\logout.png" />
     <Content Include="Content\img\modalLogin.png" />
@@ -313,6 +317,7 @@
     <Content Include="Views\Home\AlterarAnimal.cshtml" />
     <Content Include="Views\Home\ListaAnimaisUsuario.cshtml" />
     <Content Include="Views\Denuncia\AnimalBloqueado.cshtml" />
+    <Content Include="Views\Home\WebServiceDesenvolvedores.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

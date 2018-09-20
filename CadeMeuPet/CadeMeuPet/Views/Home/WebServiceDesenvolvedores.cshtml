@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "WebServiceDesenvolvedores";
+}
+<div class="card text-white bg-primary mb-3" style="width: 86%; height: 100%; margin-bottom: -10%!important">
+    <div class="card-header" style="width: 80rem; margin-top: -10px;">#CadêMeuPet <i class="icofont-paw"></i></div>
+    <div class="card-body">
+        <h4 class="card-title">WebService</h4>
+        <p class="card-text">
+            <span class="badge badge-info" style="font-size: 16px">Funcionalidades</span>
+            <div class="alert alert-dismissible alert-light" style="padding: 10px; margin: 10px">
+                <strong> O nosso webservice possui as seguintes funcionalidades:</strong> Pesquisar todos registros de Animais, cadastrar animal e pesquisar uma Postagem(Animal) por id.
+            </div>
+            <span class="badge badge-info" style="font-size: 16px">Como usar:</span>
+        <div class="alert alert-dismissible alert-light" style="padding: 10px; margin: 10px">
+            <strong> Para utilizar o nosso webservice é necessário:</strong> ultilizar os link de conexão abaixo, retorno será no formato "json".
+            <span class="badge badge-warning" style="font-size: 15px">Para listar todos os registros você deve:</span>
+            <p style="color: mediumblue; padding: 10px; margin-bottom: 0;">http://localhost:49916/api/Animal/CadastrarAnimal</p>
+            <p>Basta digitar o link acima na URL da página e você receberá uma lista em formato JSON de todos animais ou chama-lo na sua API.</p>
+            <img src="~/Content/img/1_imagem.jpg" style="width: 50%; height: 50%" /><br />
+            <span class="badge badge-warning" style="font-size: 15px">Para realizar cadastros você deve:</span>
+            <p style="color: mediumblue; padding: 10px; margin-bottom: 0;">http://localhost:49916/api/Animal/CadastrarAnimal</p>
+            <p>Utilize a Url acima e lembre-se que os dados devem ser enviados via POST.</p>
+            <span class="badge badge-warning" style="font-size: 15px">Para pesquisar um animal por Id você deve:</span>
+            <p style="color: mediumblue; padding: 10px; margin-bottom: 0;">http://localhost:49916/api/Animal/AnimalById/{id}</p>
+            <p>Você deverá digitar a Url acima e ao final inserir o id do animal desejado, veja um exemplo na imagem a sequir:</p>
+            <img src="~/Content/img/3_imagem.jpg" style="width: 50%; height: 50%" /><br />
+
+        </div>
+                <span class="badge badge-danger" style="font-size: 15px">Atenção aos seguintes erros que podem ocorrer:</span><br />
+                <p style="margin: 10px;">
+                    <div class="alert alert-dismissible alert-light" style="width: 70rem;">
+                    <b>
+                        Caso a requisição via URL ao webservice seja imprecisa ou o formato inserido esteja incorreto (!JSON), o erro gerado será o (404 not found). Além disso,
+                         dependendo do funcionamento do servidor podem ocorrer mais falhas como o (error 500) e outros que estão correlacionados ao webService (erro 400 badRequest).
+                    </b>
+                    </div>
+</p>
+</div>
+</div>
+
+

@@ -7,6 +7,7 @@
     <title></title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/estilo.css" rel="stylesheet" />
+    <link href="~/Content/icofont/icofont.min.css " rel="stylesheet" />
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDLHiKJZILq97DnN0qKzmUVRFGjwvZvvSA&amp;sensor=false"></script>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -110,13 +111,13 @@
 
                 <ul class="list-group" style="list-style-type: none">
                     <li>
-                        <a href="#!">Termos de Uso</a>
+                        <a href="@Url.Action("Login", "Usuario")">Termos de Uso</a>
                     </li>
                     <li>
-                        <a href="#!">Política de privacidade</a>
+                        <a href="@Url.Action("Login", "Usuario")">Política de privacidade</a>
                     </li>
                     <li>
-                        <a href="#!">Webservice para Desenvolvedores</a>
+                        <a href="@Url.Action("WebServiceDesenvolvedores", "Home")">Webservice para Desenvolvedores</a>
                     </li>
                 </ul>
 
