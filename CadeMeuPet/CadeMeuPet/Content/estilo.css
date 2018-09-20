@@ -179,6 +179,6 @@ li {
 footer {
     background-image: linear-gradient(white, #eee 50%, #e4e4e4);
     height: 42%;
-    margin-top: auto;
+    margin-top: 15%;
     position: absolute !important;
 }
