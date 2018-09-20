@@ -29,19 +29,19 @@
                 <div class="card mb-3">
                     @if (animais.Tipo.Especie.Count() > 0)
                     {
-                        if (animais.Tipo.Especie == "Ave")
+                        if (animais.Tipo.Especie == "Ave" || animais.Tipo.Especie == "Pássaro")
                         {
                             <div><b>@animais.NomeAnimal</b><i class="icofont-bird-flying" style="padding: 5px"></i></div>
                         }
-                        if (animais.Tipo.Especie == "Cão")
+                        if (animais.Tipo.Especie == "Cão" || animais.Tipo.Especie == "Cachorro")
                         {
                             <div><b>@animais.NomeAnimal</b><i class="icofont-dog-alt" style="padding: 5px"></i></div>
                         }
-                        if (animais.Tipo.Especie == "Felino")
+                        if (animais.Tipo.Especie == "Felino" || animais.Tipo.Especie == "Gato")
                         {
                             <div><b>@animais.NomeAnimal</b><i class="icofont-cat-alt-3" style="padding: 5px"></i></div>
                         }
-                        if (animais.Tipo.Especie == "Roedor")
+                        if (animais.Tipo.Especie == "Roedor" || animais.Tipo.Especie == "Rato" || animais.Tipo.Especie == "Hamster" || animais.Tipo.Especie == "Chinchila" || animais.Tipo.Especie == "Gerbil" || animais.Tipo.Especie == "Porquinho da Índia")
                         {
                             <div><b>@animais.NomeAnimal</b><i class="icofont-squirrel" style="padding: 5px"></i></div>
                         }
