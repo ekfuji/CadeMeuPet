@@ -169,6 +169,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\estilo.css" />
     <Content Include="Content\estiloLogin.css" />
+    <Content Include="Content\icofont.min.css" />
     <Content Include="Content\img\background.png" />
     <Content Include="Content\img\CADEMEUPET.png" />
     <Content Include="Content\img\detalhes.png" />
@@ -187,6 +188,9 @@
     <Content Include="GoogleMaps\jquery.min.js" />
     <Content Include="GoogleMaps\mapa.js" />
     <Content Include="GoogleMaps\readme.txt" />
+    <Content Include="Images\1.jpg" />
+    <Content Include="Images\2.jpg" />
+    <Content Include="Images\semimagem.jpg" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="scripts\bootstrap.js" />
@@ -265,6 +269,7 @@
       <DependentUpon>201809142105106_NotRequiredIsAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AnimaisInit.cs" />
     <Compile Include="Models\Animal.cs" />
     <Compile Include="Models\Comentario.cs" />
     <Compile Include="Models\Context.cs" />
@@ -317,7 +322,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\" />
+    <Folder Include="Content\icofont\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

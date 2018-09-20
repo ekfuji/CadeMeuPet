@@ -4,19 +4,20 @@
 @{
     List<Tipo> listarTipo = ViewBag.Tipo;
 }
-
-@*<div class="btn-group btn-group-toggle" data-toggle="buttons">
-
-    </div>*@
+<link rel="stylesheet" href="/Content/icofont/icofont.min.css">
+<link href="https://fonts.googleapis.com/css?family=Cabin:700" rel="stylesheet">
 
 
-<div>
+
+<div class="btn-group-vertical" style="position:absolute;">
     @foreach (Tipo tipos in listarTipo)
     {
-        @Html.ActionLink(tipos.Especie, "Index", "Home", new { id = tipos.TipoId }, new { @class = "btn btn-secondary", @style = "display: inline" })
+        <ul id="ul" class="btn">@Html.ActionLink(tipos.Especie, "Index", "Home", new { id = tipos.TipoId }, new { @class = "btn btn-secondary" })</ul>
     }
 </div>
+
 <div class="row" style="-ms-grid-column-align: center;">
+
     @if (Model != null)
     {
 
@@ -26,35 +27,107 @@
             if (animais.Situacao != 1)
             {
                 <div class="card mb-3">
-                    <div><b>@animais.NomeAnimal</b></div>
+                    @if (animais.Tipo.Especie.Count() > 0)
+                    {
+                        if (animais.Tipo.Especie == "Ave")
+                        {
+                            <div><b>@animais.NomeAnimal</b><i class="icofont-bird-flying" style="padding: 5px"></i></div>
+                        }
+                        if (animais.Tipo.Especie == "Cão")
+                        {
+                            <div><b>@animais.NomeAnimal</b><i class="icofont-dog-alt" style="padding: 5px"></i></div>
+                        }
+                        if (animais.Tipo.Especie == "Felino")
+                        {
+                            <div><b>@animais.NomeAnimal</b><i class="icofont-cat-alt-3" style="padding: 5px"></i></div>
+                        }
+                        if (animais.Tipo.Especie == "Roedor")
+                        {
+                            <div><b>@animais.NomeAnimal</b><i class="icofont-squirrel" style="padding: 5px"></i></div>
+                        }
+                        if (animais.Tipo.Especie == "Réptil")
+                        {
+                            <div><b>@animais.NomeAnimal</b><i class="icofont-turtle" style="padding: 5px"></i><i class="icofont-snake" style="padding: 5px"></i></div>
+                        }
+
+                    }
+                    else
+                    {
+                        <div><b>@animais.NomeAnimal</b><i class="icofont-paw"></i></div>
+                    }
+
                     <div class="card bg-light mb-3" style="max-width: 25rem; display: block">
-                        <img id="fotoAnimal" src="~/Images/@animais.Imagem" /><br />
+                        <img id="fotoAnimal" src="~/Images/@animais.Imagem"/><br/>
                     </div>
 
                     <ul class="list-group list-group-flush" style="align-self: center">
                         <li class="list-group-item">
                             <b id=Data style="margin-right: 2px; font-size: 12px;">@animais.DataCadastro.ToShortDateString()</b>
-                            <a href='@Url.Action("DetalhesAnimal", "Home", new { id = animais.AnimalId })'><img style="width: 85px" src="~/Content/img/detalhes.png" /></a>
+                            <a href='@Url.Action("DetalhesAnimal", "Home", new {id = animais.AnimalId})'><img style="width: 85px" src="~/Content/img/detalhes.png"/></a>
                         </li>
                     </ul>
+
                 </div>
             }
         }
     }
 </div>
 
-<script>
-    $('#Data').val(dataAtualFormatada);
-    function dataAtualFormatada() {
-        var data = new Date();
-        var dia = data.getDate();
-        if (dia.toString().length == 1)
-            dia = "0" + dia;
-        var mes = data.getMonth() + 1;
-        if (mes.toString().length == 1)
-            mes = "0" + mes;
-        var ano = data.getFullYear();
-        return dia + "/" + mes + "/" + ano;
-    }
-</script>
 
+     
+
+
+
+
+@section scripts
+{
+    <script>
+        $('#Data').val(dataAtualFormatada);
+        function dataAtualFormatada() {
+            var data = new Date();
+            var dia = data.getDate();
+            if (dia.toString().length == 1)
+                dia = "0" + dia;
+            var mes = data.getMonth() + 1;
+            if (mes.toString().length == 1)
+                mes = "0" + mes;
+            var ano = data.getFullYear();
+            return dia + "/" + mes + "/" + ano;
+        }
+
+    </script>
+    
+
+}
+
+
+<style>
+
+    a:link {text-decoration: none}
+    #ul:hover {
+        border-radius: 10px;
+        padding: 3px;
+        opacity:1;
+        
+    }
+
+    .btn.btn-secondary {
+        background-image: linear-gradient(#e4e4e4, #eee 60%, #dddcdc );
+        color: #0071BC;
+        border: 1px solid #eae9e9;
+        width: 100px;
+        font-family: 'Cabin', sans-serif;
+        
+        
+    }
+    .btn.btn-secondary:hover { 
+        color: #fff !important; 
+        background-image: linear-gradient(cornflowerblue, #83aaf0 60%, #b1caf6 ) !important;
+        border: none !important;
+
+    }
+
+    .btn-group-vertical {
+        margin-right: 100%;
+    }
+</style>

@@ -4,17 +4,17 @@
     ViewBag.Title = "ListaAnimaisUsuario";
 }
 
-<div class="jumbotron" style="width: 1500px">
+<div class="jumbotron" style="width: 96%">
     <table class="table table-hover">
-        <tr class="table-secondary">
+        <tr class="table-secondary" style="text-align: center">
             <th scope="col">Foto</th>
             <th scope="col">Nome</th>
-            <th scope="col">Data Postagem</th>
+            <th scope="col" style="max-width: 20px;">Data Postagem</th>
             <th scope="col">Ver Postagem</th>
-            <th scope="col">Editar dados do Animal</th>
-            <th scope="col">Editar dados do Endereço</th>
-            <th scope="col">Achei meu pet</th>
-            <th scope="col">Status da Postagem</th>
+            <th scope="col" style="max-width: 20px;">Editar dados</th>
+            <th scope="col" style="max-width: 20px;">Editar endereço</th>
+            <th scope="col" style="max-width: 20px;">Achei meu pet</th>
+            <th scope="col" style="max-width: 20px;">Status</th>
         </tr>
         @if (Model != null)
         {
@@ -24,10 +24,10 @@
                     <td><img src="~/Images/@animal.Imagem" style="width: 100px; height: 100px" /></td>
                     <td>@animal.NomeAnimal</td>
                     <td>@animal.DataCadastro</td>
-                    <td>@Html.ActionLink("Ver Postagem", "DetalhesAnimal", "Home", new { id = animal.AnimalId }, new { @class = "btn btn-primary" })</td>
-                    <td>@Html.ActionLink("Editar Animal", "AlterarAnimal", "Home", new { id = animal.AnimalId }, new { @class = "btn btn-primary" })</td>
-                    <td>@Html.ActionLink("Editar Animal", "AlterarEndereco", "Endereco", new { id = animal.EnderecoId }, new { @class = "btn btn-primary" })</td>
-                    <td>@Html.ActionLink("Bloquear Publicação", "AnimalEncontrado", "Home", new { id = animal.AnimalId }, new { @class = "btn btn-primary" })</td>
+                    <td>@Html.ActionLink("Ver postagem", "DetalhesAnimal", "Home", new { id = animal.AnimalId }, new { @class = "btn btn-primary" })</td>
+                    <td>@Html.ActionLink("Editar animal", "AlterarAnimal", "Home", new { id = animal.AnimalId }, new { @class = "btn btn-primary" })</td>
+                    <td>@Html.ActionLink("Editar animal", "AlterarEndereco", "Endereco", new { id = animal.EnderecoId }, new { @class = "btn btn-primary" })</td>
+                    <td>@Html.ActionLink("Bloquear post", "AnimalEncontrado", "Home", new { id = animal.AnimalId }, new { @class = "btn btn-primary" })</td>
                     @if (animal.Situacao == 1)
                     {
                         <td class="text-danger">Bloqueado</td>

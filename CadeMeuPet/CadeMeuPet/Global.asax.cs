@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using System.Data.Entity;
+using CadeMeuPet.Models;
 
 namespace CadeMeuPet
 {
@@ -18,6 +19,8 @@ namespace CadeMeuPet
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            Database.SetInitializer<Context>(new AnimaisInit());
         }
     }
 }

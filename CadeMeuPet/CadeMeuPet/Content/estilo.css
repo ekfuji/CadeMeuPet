@@ -1,9 +1,12 @@
 ﻿body {
     background-image: url("img/background.png");
-    width:100%;
+    -moz-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    background-size: auto;
+    background-attachment: fixed;
     margin:auto;
-    min-width:600px;
-    max-width:2000px;
+
+
 
 }
 
@@ -43,7 +46,7 @@ small {
     width: 220px;
     height: 350px; 
     overflow: hidden;
-    margin: 6px ;
+    margin: 20px ;
     padding: 13px;
     
                 
@@ -171,4 +174,10 @@ li {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+footer {
+    background-image: linear-gradient(white, #eee 50%, #e4e4e4);
+    height: 100%;
+    margin-top: auto;
 }
