@@ -20,7 +20,7 @@
 
         <p class="mb-1"><b>Porte: </b> @Html.DisplayFor(model => model.Porte.Tamanho)</p>
         <p class="mb-1"><b>Especie: </b>@Html.DisplayFor(model => model.Tipo.Especie)</p>
-        <div><b>Características: </b><footer class="blockquote-footer" style="height: 100%">@Html.DisplayFor(model => model.Caracteristicas)</footer></div>
+        <div><b>Características: </b><div class="blockquote-footer" style="height: 100%">@Html.DisplayFor(model => model.Caracteristicas)</div></div>
         <input type="hidden" id="txtLatitude" value="@Model.Endereco.Latitude" />
         <input type="hidden" id="txtLongitude" value="@Model.Endereco.Longitude" />
       
