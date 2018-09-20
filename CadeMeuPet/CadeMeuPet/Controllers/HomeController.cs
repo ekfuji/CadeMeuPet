@@ -17,6 +17,7 @@ namespace CadeMeuPet.Controllers
         #region Index
         public ActionResult Index(int? id)
         {
+            
             ViewBag.Tipo = TipoDAO.BuscarTipos();
             if(id == null)
             {
@@ -56,7 +57,7 @@ namespace CadeMeuPet.Controllers
 
         #endregion
 
-            #region Pag Cadastro do Animal
+        #region Pag Cadastro do Animal
         [Authorize(Roles = "Usuario")]
         public ActionResult CadastrarAnimal(int EnderecoId)
         {
