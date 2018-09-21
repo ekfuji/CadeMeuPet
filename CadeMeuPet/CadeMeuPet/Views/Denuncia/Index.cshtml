@@ -23,7 +23,7 @@
                 <td>@denuncias.Motivo</td>
                 <td>@denuncias.AnimalId</td>
                 <td>@Html.ActionLink("Ver Postagem", "DetalhesAnimal", "Home", new { id = denuncias.AnimalId }, new { @class = "btn btn-primary" })</td>
-                <td>@Html.ActionLink("Remover", "RemoverTipo", "Tipo", new { id = denuncias.DenunciaId}, new { @class = "btn btn-primary" })</td>
+                <td>@Html.ActionLink("Remover", "RemoverDenuncia", "Denuncia", new { id = denuncias.DenunciaId}, new { @class = "btn btn-primary" })</td>
                 <td>@Html.ActionLink("Bloquear","AnimalEncontrado","Home", new { id = denuncias.AnimalId}, new { @class ="btn btn-primary"})</td>
                 <td>@Html.ActionLink("Desbloquear","DesbloquearAnimal","Home", new { id = denuncias.AnimalId}, new { @class = "btn btn-primary"})</td>
             </tr>

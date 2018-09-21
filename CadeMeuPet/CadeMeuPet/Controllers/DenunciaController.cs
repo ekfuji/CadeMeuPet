@@ -56,7 +56,7 @@ namespace CadeMeuPet.Controllers
             {
                 DenunciaDAO.RemoverDenuncia(id);
             }
-            return RedirectToAction("Index","Denuncia");
+            return RedirectToAction("Index","Home");
         }
         #endregion
 

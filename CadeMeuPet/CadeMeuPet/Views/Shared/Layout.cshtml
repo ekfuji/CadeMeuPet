@@ -24,8 +24,7 @@
         <ul class="navbar-nav" style="margin-right: 20px">
             @if (Request.IsAuthenticated)
             {
-                if(Session["IsAdmin"] != null)
-                {
+
 
                 
                 if (Session["IsAdmin"].ToString() == "Admin")
@@ -41,7 +40,7 @@
                         </div>
                     </li>
                 }
-                    }
+                   
                 else
                 {
                     <li class="dropdown" style="margin-left: 10px;">
