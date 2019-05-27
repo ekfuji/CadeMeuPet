@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CadeMeuPet.Migrations;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -9,7 +10,11 @@ namespace CadeMeuPet.Models
 {
     public class Context : DbContext
     {
-        public Context() : base("DbCadeMeuPet") {}
+        public Context() : base("DbCadeMeuPet") {
+            Database.SetInitializer(new CreateDatabaseIfNotExists<Context>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<Context, Configuration>());
+
+        }
 
         public DbSet<Tipo> Tipos { get; set; }
         public DbSet<Comentario> Comentarios { get; set; }
