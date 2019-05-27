@@ -23,7 +23,7 @@
                 <h3>Qual foi a ultima localização do seu Bichinho?</h3>
 
                 <br />
-                 @Html.HiddenFor(Model => Model.EnderecoId)
+                @Html.HiddenFor(Model => Model.EnderecoId)
                 @Html.LabelFor(Model => Model.Logradouro, null, new { @style = "color: #000000" })
                 @Html.ValidationMessageFor(Model => Model.Logradouro, null, new { @class = "text-danger" })<br />
                 @Html.TextBoxFor(Model => Model.Logradouro,
@@ -35,7 +35,8 @@
                         })<br />
 
 
-
+                <span class="btn btn-secondary" style="width:100px; float: right"><i class="fa fa-search"></i>Localizar</span>
+                <br>
                 @Html.EditorFor(model => model.Latitude, new { htmlAttributes = new { @class = "esconde" } })
 
 
@@ -50,7 +51,7 @@
                     </div>
                     <div id="mapa"></div>
 
-                    <input type="hidden" id="txtLatitude" name="txtLatitude" value="@Model.Latitude"/>
+                    <input type="hidden" id="txtLatitude" name="txtLatitude" value="@Model.Latitude" />
                     <input type="hidden" id="txtLongitude" name="txtLongitude" value="@Model.Longitude" />
 
                 </div>
